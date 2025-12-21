@@ -1,20 +1,20 @@
-/* CSS Variables for Easy Customization */
+/* Variáveis CSS */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #34495e;
-    --accent-color: #3498db;
-    --text-color: #333333;
-    --text-light: #666666;
-    --bg-color: #ffffff;
-    --sidebar-bg: #f4f6f7;
-    --sidebar-text: #2c3e50;
-    --white: #ffffff;
+    --cor-primaria: #2c3e50;
+    --cor-secundaria: #34495e;
+    --cor-destaque: #3498db;
+    --cor-texto: #333333;
+    --texto-claro: #666666;
+    --cor-fundo: #ffffff;
+    --fundo-lateral: #f4f6f7;
+    --texto-lateral: #2c3e50;
+    --branco: #ffffff;
 
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 2rem;
+    --gap-pq: 0.5rem;
+    --gap-md: 1rem;
+    --gap-gd: 2rem;
     
-    --font-main: 'Roboto', sans-serif;
+    --fonte: 'Roboto', sans-serif;
 }
 
 * {
@@ -24,9 +24,9 @@
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: var(--fonte);
     background-color: #e9ecef;
-    color: var(--text-color);
+    color: var(--cor-texto);
     line-height: 1.6;
     display: flex;
     justify-content: center;
@@ -34,234 +34,217 @@ body {
     padding: 2rem 0;
 }
 
-
-.resume-container {
+/* Layout Principal */
+.pagina {
     display: flex;
-    background-color: var(--bg-color);
+    background-color: var(--cor-fundo);
     width: 210mm;
     min-height: 297mm;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     margin: 0 auto;
 }
 
-.sidebar {
+.lateral {
     width: 35%;
-    background-color: var(--sidebar-bg);
-    color: var(--sidebar-text);
-    padding: var(--spacing-lg);
+    background-color: var(--fundo-lateral);
+    color: var(--texto-lateral);
+    padding: var(--gap-gd);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: var(--gap-gd);
 }
 
-.profile-img-container {
+.principal {
+    width: 65%;
+    padding: var(--gap-gd);
+}
+
+/* Lateral - Perfil */
+.perfil {
+    text-align: center;
+}
+
+.avatar {
     width: 150px;
     height: 150px;
-    margin: 0 auto var(--spacing-md);
+    margin: 0 auto var(--gap-md);
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid var(--white);
+    border: 4px solid var(--branco);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.profile-img {
+.foto {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.profile-section {
-    text-align: center;
-}
-
-.name {
+.nome {
     font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-sm);
+    color: var(--cor-primaria);
+    margin-bottom: var(--gap-pq);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.title {
+.profissao {
     font-size: 1rem;
-    color: var(--text-light);
+    color: var(--texto-claro);
     font-weight: 400;
 }
 
-.contact-section h3,
-.skills-section h3,
-.languages-section h3 {
+/* Lateral - Seções Comuns */
+.contato h3,
+.habilidades h3,
+.idiomas h3 {
     font-size: 1.2rem;
     text-transform: uppercase;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
-    color: var(--primary-color);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: var(--gap-pq);
+    margin-bottom: var(--gap-md);
+    color: var(--cor-primaria);
 }
 
-.contact-list,
-.skills-list,
-.languages-list {
+.contatos,
+.competencias,
+.linguas {
     list-style: none;
 }
 
-.contact-list li {
+/* Contato */
+.contatos li {
     display: flex;
     align-items: center;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--gap-md);
     font-size: 0.9rem;
 }
 
-.contact-list li i {
+.telefone, .email, .endereco, .linkedin, .github {
     width: 25px;
-    color: var(--accent-color);
+    color: var(--cor-destaque);
     margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
 }
 
-.skills-list li {
-    background-color: var(--white);
+.telefone::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f095";
+}
+
+.email::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f0e0";
+}
+
+.endereco::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f3c5";
+}
+
+.linkedin::before {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    content: "\f08c";
+}
+
+.github::before {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    content: "\f09b";
+}
+
+/* Habilidades */
+.competencias li {
+    background-color: var(--branco);
     padding: 5px 10px;
     margin-bottom: 8px;
     border-radius: 4px;
     font-size: 0.9rem;
-    border-left: 3px solid var(--accent-color);
+    border-left: 3px solid var(--cor-destaque);
 }
 
-.languages-list li {
+/* Idiomas */
+.linguas li {
     display: flex;
     justify-content: space-between;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--gap-pq);
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 5px;
 }
 
-.lang-level {
+.nivel {
     font-weight: bold;
-    color: var(--text-light);
+    color: var(--texto-claro);
     font-size: 0.85rem;
 }
 
-.main-content {
-    width: 65%;
-    padding: var(--spacing-lg);
-}
-
-.section-title {
+/* Conteúdo Principal */
+.titulo {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--cor-primaria);
     border-bottom: 2px solid #eee;
-    padding-bottom: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
+    padding-bottom: var(--gap-pq);
+    margin-bottom: var(--gap-gd);
+    margin-top: var(--gap-gd);
     display: flex;
     align-items: center;
 }
 
-.section-title:first-child {
+.titulo:first-child {
     margin-top: 0;
 }
 
-.section-title i {
-    margin-right: var(--spacing-md);
-    color: var(--accent-color);
+.titulo i {
+    margin-right: var(--gap-md);
+    color: var(--cor-destaque);
 }
 
-.experience-item,
-.education-item,
-.project-item {
-    margin-bottom: var(--spacing-lg);
+.trabalho,
+.educacao,
+.projeto {
+    margin-bottom: var(--gap-gd);
 }
 
-.exp-header,
-.edu-header {
+.topo {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 5px;
 }
 
-.exp-role,
-.edu-degree {
+.funcao,
+.curso {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--cor-secundaria);
 }
 
-.exp-date,
-.edu-date {
+.data {
     font-size: 0.9rem;
-    color: var(--accent-color);
+    color: var(--cor-destaque);
     font-weight: 500;
 }
 
-.exp-company,
-.edu-school {
+.empresa,
+.instituicao {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--text-light);
-    margin-bottom: var(--spacing-sm);
+    color: var(--texto-claro);
+    margin-bottom: var(--gap-pq);
     font-style: italic;
 }
 
-.exp-description,
-.summary-section p {
-    color: var(--text-color);
+.descricao,
+.resumo p {
+    color: var(--cor-texto);
     text-align: justify;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 0;
-        background-color: var(--bg-color);
-    }
-
-    .resume-container {
-        flex-direction: column;
-        width: 100%;
-        box-shadow: none;
-    }
-
-    .sidebar {
-        width: 100%;
-        padding: var(--spacing-md);
-    }
-
-    .main-content {
-        width: 100%;
-        padding: var(--spacing-md);
-    }
-    
-    .exp-header,
-    .edu-header {
-        flex-direction: column;
-    }
-}
-
-@media print {
-    body {
-        background-color: white;
-        padding: 0;
-    }
-
-    .resume-container {
-        width: 100%;
-        box-shadow: none;
-        margin: 0;
-        height: auto;
-    }
-
-    .sidebar {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        background-color: var(--sidebar-bg) !important; 
-    }
-    
-    .skills-list li {
-         border: 1px solid #ddd;
-    }
-
-    a {
-        text-decoration: none;
-        color: var(--text-color);
-    }
 }
