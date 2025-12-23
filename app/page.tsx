@@ -1,12 +1,9 @@
-import Header from "./_components_/header";
-import Main from "./_components_/main";
-import Footer from "./_components_/footer";
+import Main from "./pages/main";
+
 export default function Home() {
   return (
     <>
-      <Header />
       <Main />
-      <Footer />
     </>
   );
 }
