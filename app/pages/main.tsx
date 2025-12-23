@@ -1,16 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
+import "./main.css";
 
 // Importar os componentes de cada página
 import Home from "../../components/home";
 import Linguagens from "../../components/linguagens";
-import Agenda from "../../components/agenda";
 import Portifolio from "../../components/portifolio";
-import Profsara from "../../components/profsara";
 import Contato from "../../components/contato";
 
 // Tipos das páginas disponíveis
-type PageType = "home" | "linguagens" | "agenda" | "portifolio" | "profsara" | "contato";
+type PageType = "home" | "linguagens" | "projetos" | "contato";
 
 export default function Main() {
     const [currentPage, setCurrentPage] = useState<PageType>("home");
@@ -27,12 +26,8 @@ export default function Main() {
                 return <Home />;
             case "linguagens":
                 return <Linguagens />;
-            case "agenda":
-                return <Agenda />;
-            case "portifolio":
+            case "projetos":
                 return <Portifolio />;
-            case "profsara":
-                return <Profsara />;
             case "contato":
                 return <Contato />;
             default:
@@ -47,110 +42,88 @@ export default function Main() {
     };
 
     return (
-        <div className="container-fluid">
-            <div className="row flex-nowrap">
+        <div className="container-fluid p-0 main-container">
+            <div className="row g-0 flex-nowrap">
                 {/* Sidebar / Menu Lateral */}
-                <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-                    <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <div className="col-auto col-md-3 col-xl-2 px-0 sidebar">
+                    <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-4 text-white sidebar-content">
+                        {/* Perfil / Logo */}
                         <a
                             href="/"
-                            className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+                            className="d-flex flex-column align-items-center align-items-sm-start pb-4 mb-3 w-100 text-white text-decoration-none profile-section"
                             onClick={(e) => handleNavigation("home", e)}
                         >
-                            <span className="fs-5 d-none d-sm-inline">Natanael Silva</span>
+                            <div className="rounded-3 mb-3 d-flex align-items-center justify-content-center overflow-hidden profile-photo">
+                                <img
+                                    src="/photo.jpg"
+                                    alt="Foto de perfil - Natanael Silva"
+                                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                                />
+                            </div>
+                            <span className="fs-5 fw-bold d-none d-sm-inline profile-name">
+                                Natanael Silva
+                            </span>
+                            <small className="d-none d-sm-inline profile-subtitle">Desenvolvedor Full Stack</small>
                         </a>
-                        <ul
-                            className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-                            id="menu"
-                        >
+
+                        {/* Menu de Navegação */}
+                        <ul className="nav nav-pills flex-column mb-sm-auto mb-0 w-100" id="menu">
                             {/* Início */}
-                            <li className="nav-item">
+                            <li className="nav-item mb-2 nav-menu-item">
                                 <a
                                     href="#"
-                                    className={`nav-link align-middle px-0 ${currentPage === "home" ? "active" : ""}`}
+                                    className={`nav-link d-flex align-items-center rounded-3 px-3 py-2 nav-menu-link ${currentPage === "home" ? "active" : ""}`}
                                     onClick={(e) => handleNavigation("home", e)}
                                 >
-                                    <i className="fs-4 bi-house"></i>{" "}
-                                    <span className="ms-1 d-none d-sm-inline">Início</span>
+                                    <i className="bi bi-house-fill fs-5"></i>
+                                    <span className="ms-2 d-none d-sm-inline">Início</span>
                                 </a>
                             </li>
 
                             {/* Linguagens */}
-                            <li>
+                            <li className="nav-item mb-2 nav-menu-item">
                                 <a
                                     href="#"
-                                    className={`nav-link px-0 align-middle ${currentPage === "linguagens" ? "active" : ""}`}
+                                    className={`nav-link d-flex align-items-center rounded-3 px-3 py-2 nav-menu-link ${currentPage === "linguagens" ? "active" : ""}`}
                                     onClick={(e) => handleNavigation("linguagens", e)}
                                 >
-                                    <i className="fs-4 bi-code-slash"></i>{" "}
-                                    <span className="ms-1 d-none d-sm-inline">Linguagens</span>
+                                    <i className="bi bi-code-slash fs-5"></i>
+                                    <span className="ms-2 d-none d-sm-inline">Linguagens</span>
                                 </a>
                             </li>
 
-                            {/* Projetos com submenu */}
-                            <li>
+                            {/* Projetos */}
+                            <li className="nav-item mb-2 nav-menu-item">
                                 <a
-                                    href="#submenu3"
-                                    data-bs-toggle="collapse"
-                                    className="nav-link px-0 align-middle"
+                                    href="#"
+                                    className={`nav-link d-flex align-items-center rounded-3 px-3 py-2 nav-menu-link ${currentPage === "projetos" ? "active" : ""}`}
+                                    onClick={(e) => handleNavigation("projetos", e)}
                                 >
-                                    <i className="fs-4 bi-grid"></i>{" "}
-                                    <span className="ms-1 d-none d-sm-inline">Projetos</span>{" "}
+                                    <i className="bi bi-folder-fill fs-5"></i>
+                                    <span className="ms-2 d-none d-sm-inline">Projetos</span>
                                 </a>
-                                <ul
-                                    className="collapse nav flex-column ms-1"
-                                    id="submenu3"
-                                    data-bs-parent="#menu"
-                                >
-                                    <li className="w-100">
-                                        <a
-                                            href="#"
-                                            className={`nav-link px-0 ${currentPage === "agenda" ? "active" : ""}`}
-                                            onClick={(e) => handleNavigation("agenda", e)}
-                                        >
-                                            <span className="d-none d-sm-inline">Agenda Familiar</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="#"
-                                            className={`nav-link px-0 ${currentPage === "portifolio" ? "active" : ""}`}
-                                            onClick={(e) => handleNavigation("portifolio", e)}
-                                        >
-                                            <span className="d-none d-sm-inline">Portifólio Maker</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="#"
-                                            className={`nav-link px-0 ${currentPage === "profsara" ? "active" : ""}`}
-                                            onClick={(e) => handleNavigation("profsara", e)}
-                                        >
-                                            <span className="d-none d-sm-inline">Site Professora Sara Ramos</span>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
 
                             {/* Contato */}
-                            <li>
+                            <li className="nav-item mb-2 nav-menu-item">
                                 <a
                                     href="#"
-                                    className={`nav-link px-0 align-middle ${currentPage === "contato" ? "active" : ""}`}
+                                    className={`nav-link d-flex align-items-center rounded-3 px-3 py-2 nav-menu-link ${currentPage === "contato" ? "active" : ""}`}
                                     onClick={(e) => handleNavigation("contato", e)}
                                 >
-                                    <i className="fs-4 bi-people"></i>{" "}
-                                    <span className="ms-1 d-none d-sm-inline">Contato</span>
+                                    <i className="bi bi-envelope-fill fs-5"></i>
+                                    <span className="ms-2 d-none d-sm-inline">Contato</span>
                                 </a>
                             </li>
                         </ul>
-                        <hr />
                     </div>
                 </div>
 
                 {/* Área de Conteúdo Principal */}
-                <div className="col py-3">
-                    {renderContent()}
+                <div className="col py-4 px-4 content-area">
+                    <div className="rounded-4 p-4 content-card">
+                        {renderContent()}
+                    </div>
                 </div>
             </div>
         </div>

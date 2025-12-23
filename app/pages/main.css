@@ -1,0 +1,122 @@
+:root {
+  /* Cores Primárias */
+  --color-primary: #0d6efd;
+  --color-primary-hover: #0b5ed7;
+
+  /* Cores de Fundo */
+  --color-bg-dark: #1a1a2e;
+  --color-bg-darker: #0f0f23;
+  --color-bg-accent: #16213e;
+
+  /* Cores de Texto */
+  --color-text-white: #ffffff;
+  --color-text-light: #f8f9fa;
+  --color-text-muted: #6c757d;
+  --color-text-secondary: #adb5bd;
+
+  /* Cores de Borda */
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-border-medium: rgba(255, 255, 255, 0.2);
+
+  /* Sombras */
+  --shadow-sidebar: 4px 0 15px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  /* Transições */
+  --transition-default: all 0.3s ease;
+}
+
+.main-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-dark) 0%,
+    var(--color-bg-accent) 100%
+  );
+}
+
+.sidebar {
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-darker) 0%,
+    var(--color-bg-dark) 50%,
+    var(--color-bg-accent) 100%
+  );
+  box-shadow: var(--shadow-sidebar);
+  border-right: 1px solid var(--color-border-light);
+}
+
+.sidebar-content {
+  min-height: 100vh;
+}
+
+.profile-section {
+  transition: var(--transition-default);
+  border-bottom: 1px solid var(--color-text-muted);
+}
+
+.profile-photo {
+  width: 90%;
+  max-width: 180px;
+  background: var(--color-bg-darker);
+  border: 2px solid var(--color-text-muted);
+  aspect-ratio: 1 / 1;
+}
+
+.profile-name {
+  color: var(--color-text-white);
+}
+
+.profile-subtitle {
+  color: var(--color-text-muted);
+}
+
+.nav-menu-item {
+  transition: var(--transition-default);
+}
+
+.nav-menu-link {
+  color: var(--color-text-light);
+  transition: var(--transition-default);
+}
+
+.nav-menu-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-white);
+}
+
+.nav-menu-link.active {
+  background: var(--color-primary);
+  color: var(--color-text-white);
+}
+
+.content-area {
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-dark) 0%,
+    var(--color-bg-accent) 100%
+  );
+  min-height: 100vh;
+}
+
+.content-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border-light);
+  min-height: calc(100vh - 2rem);
+}
+
+/* Estilos de texto para o conteúdo */
+.content-card h1,
+.content-card h2,
+.content-card h3,
+.content-card h4,
+.content-card h5,
+.content-card h6 {
+  color: var(--color-text-white);
+}
+
+.content-card p,
+.content-card li {
+  color: var(--color-text-secondary);
+}
