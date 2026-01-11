@@ -16,6 +16,7 @@ const techStack = [
     { nome: "Next.js", icone: "devicon-nextjs-plain", cor: "#ffffff" },
     { nome: "React", icone: "devicon-react-original", cor: "#61DAFB" },
     { nome: "React Native", icone: "devicon-react-original", cor: "#61DAFB" },
+    { nome: "Angular", icone: "devicon-angular-plain", cor: "#D9263A" },
 ];
 
 const experiencias = [
@@ -105,11 +106,11 @@ export default function Home() {
                         </div>
                         <pre className="code-content">
 {`const developer = {
-  nome: "Natanael Ramos",
+  nome: "Natanael Santos Da Silva Ramos",
+  idade: "30 anos",
   cidade: "Goiânia-GO",
   infraestrutura: "7 anos",
   desenvolvimento: "1 ano",
-  paixao: "Criar soluções",
   status: "Disponível"
 };`}
                         </pre>

@@ -62,6 +62,13 @@ const tecnologias: Tecnologia[] = [
         categoria: "framework"
     },
     {
+        nome: "Bootstrap",
+        icone: "devicon-bootstrap-plain",
+        cor: "#563D7C",
+        descricao: "Framework para desenvolvimento web. Permite criar interfaces de usuário modernas e responsivas.",
+        categoria: "framework"
+    },
+    {
         nome: "SQL",
         icone: "devicon-azuresqldatabase-plain",
         cor: "#00758F",
@@ -74,7 +81,28 @@ const tecnologias: Tecnologia[] = [
         cor: "#47A248",
         descricao: "Bancos de dados não-relacionais como MongoDB. Flexibilidade de esquema e alta escalabilidade para dados não estruturados.",
         categoria: "banco"
-    }
+    },
+    {
+        nome: "PostgreSQL",
+        icone: "devicon-postgresql-plain",
+        cor: "#336791",
+        descricao: "Banco de dados relacional. Permite consultar, manipular e gerenciar dados estruturados.",
+        categoria: "banco"
+    },
+    {
+        nome: "MongoDB",
+        icone: "devicon-mongodb-plain",
+        cor: "#47A248",
+        descricao: "Bancos de dados não-relacionais como MongoDB. Flexibilidade de esquema e alta escalabilidade para dados não estruturados.",
+        categoria: "banco"
+    },
+    {
+        nome: "MySQL",
+        icone: "devicon-mysql-plain",
+        cor: "#429756",
+        descricao: "Banco de dados relacional. Permite consultar, manipular e gerenciar dados estruturados.",
+        categoria: "banco"
+    },
 ];
 
 const categorias = {
