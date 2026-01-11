@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import PageContainer from "./PageContainer";
 import "./portifolio.css";
 
@@ -71,7 +72,7 @@ export default function Portifolio() {
     return (
         <PageContainer title="Meus Projetos">
             <p className="intro-text">
-                Projetos que desenvolvi com dedicação e paixão. 
+                Projetos que desenvolvi com dedicação e paixão.
                 <span className="mobile-hint"> Toque para ver detalhes, toque novamente para visitar.</span>
             </p>
 
@@ -98,10 +99,13 @@ export default function Portifolio() {
                             onClick={(e) => handleCardClick(e, projeto.id)}
                         >
                             <div className="projeto-imagem-wrapper">
-                                <img
+                                <Image
                                     src={projeto.imagem}
                                     alt={`Preview do projeto ${projeto.nome}`}
                                     className="projeto-imagem"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    style={{ objectFit: 'cover' }}
                                 />
                                 <div className="projeto-overlay">
                                     <span className="ver-projeto">
