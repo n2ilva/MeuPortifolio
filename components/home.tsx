@@ -22,7 +22,7 @@ const techStack = [
 const experiencias = [
     {
         area: "Infraestrutura de TI",
-        tempo: "7 anos",
+        tempo: "6 anos",
         icone: "bi-hdd-network-fill",
         cor: "#6366f1",
         descricao: "Cisco, Fortigate, Dell",
@@ -90,7 +90,7 @@ export default function Home() {
                     </div>
 
                     <p className="hero-description">
-                        Profissional com <strong>8 anos de experiência</strong> em tecnologia, 
+                        Profissional com <strong>7 anos de experiência</strong> em tecnologia, 
                         combinando sólida expertise em infraestrutura de TI com desenvolvimento 
                         de aplicações web e mobile modernas.
                     </p>
@@ -109,7 +109,7 @@ export default function Home() {
   nome: "Natanael Santos Da Silva Ramos",
   idade: "30 anos",
   cidade: "Goiânia-GO",
-  infraestrutura: "7 anos",
+  infraestrutura: "6 anos",
   desenvolvimento: "1 ano",
   status: "Disponível"
 };`}
