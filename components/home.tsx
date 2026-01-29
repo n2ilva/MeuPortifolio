@@ -2,50 +2,9 @@
 import { useEffect, useState } from "react";
 import "./home.css";
 
-// Objeto centralizado de experiência
-const EXPERIENCE = {
-    infraYears: 6,
-    devYears: 1,
-    get totalYears() {
-        return this.infraYears + this.devYears;
-    }
-};
-
-const roles = [
-    "Desenvolvedor Full Stack",
-    "Desenvolvedor Web",
-    "Desenvolvedor Mobile",
-    "Analista de Infraestrutura"
-];
-
-const techStack = [
-    { nome: "JavaScript", icone: "devicon-javascript-plain", cor: "#F7DF1E" },
-    { nome: "TypeScript", icone: "devicon-typescript-plain", cor: "#3178C6" },
-    { nome: "Node.js", icone: "devicon-nodejs-plain", cor: "#339933" },
-    { nome: "Next.js", icone: "devicon-nextjs-plain", cor: "#ffffff" },
-    { nome: "React", icone: "devicon-react-original", cor: "#61DAFB" },
-    { nome: "React Native", icone: "devicon-react-original", cor: "#61DAFB" },
-    { nome: "Tailwind CSS", icone: "devicon-tailwindcss-plain", cor: "#06B6D4" },
-];
-
-const experiencias = [
-    {
-        area: "Infraestrutura de TI",
-        tempo: `${EXPERIENCE.infraYears} anos`,
-        icone: "bi-hdd-network-fill",
-        cor: "#6366f1",
-        descricao: "Gerenciamento de Servidores AD e BD • Configuração de Switches, Roteadores e Firewalls Cisco/Fortigate • Implementação de Access Points e Controllers • Configuração de Telefonia IP • Administração de Políticas de Backup",
-        tags: ["Redes", "Segurança", "Servidores", "Telefonia", "Backup"]
-    },
-    {
-        area: "Desenvolvimento",
-        tempo: `${EXPERIENCE.devYears} ano`,
-        icone: "bi-code-slash",
-        cor: "#22c55e",
-        descricao: "Desenvolvimento de aplicações Web e Mobile com React, React Native e Next.js • Integração com Firebase e Supabase • Implementação de autenticação e sincronização em tempo real • Criação de plataformas educacionais e ferramentas interativas",
-        tags: ["React", "React Native", "Next.js", "Firebase", "TypeScript"]
-    }
-];
+// Importações centralizadas
+import { experience, roles, experiencias } from "../config/site.config";
+import { techStackHome } from "../data/technologies";
 
 export default function Home() {
     const [roleIndex, setRoleIndex] = useState(0);
@@ -167,7 +126,7 @@ export default function Home() {
                 </h2>
 
                 <div className="tech-carousel">
-                    {techStack.map((tech, index) => (
+                    {techStackHome.map((tech, index) => (
                         <div 
                             key={index} 
                             className="tech-item"
@@ -188,15 +147,15 @@ export default function Home() {
             {/* Stats Section */}
             <section className="stats-section">
                 <div className="stat-card">
-                    <span className="stat-number">{EXPERIENCE.totalYears}+</span>
+                    <span className="stat-number">{experience.totalYears}+</span>
                     <span className="stat-label">Anos em TI</span>
                 </div>
                 <div className="stat-card">
-                    <span className="stat-number">{EXPERIENCE.infraYears}</span>
+                    <span className="stat-number">{experience.infraYears}</span>
                     <span className="stat-label">Anos Infraestrutura</span>
                 </div>
                 <div className="stat-card">
-                    <span className="stat-number">{EXPERIENCE.devYears}</span>
+                    <span className="stat-number">{experience.devYears}</span>
                     <span className="stat-label">Ano Desenvolvimento</span>
                 </div>
                 <div className="stat-card">

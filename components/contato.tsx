@@ -3,6 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import PageContainer from "./PageContainer";
 import "./contato.css";
 
+// Importações centralizadas
+import { contatos, comandosDisponiveis } from "../data/contacts";
+
 interface Comando {
     input: string;
     output: string | React.ReactNode;
@@ -10,52 +13,31 @@ interface Comando {
     href?: string;
 }
 
-const comandosDisponiveis = [
-    { cmd: "help", desc: "Lista todos os comandos disponíveis" },
-    { cmd: "email", desc: "Exibe meu endereço de e-mail" },
-    { cmd: "linkedin", desc: "Link para meu perfil LinkedIn" },
-    { cmd: "github", desc: "Link para meu perfil GitHub" },
-    { cmd: "whatsapp", desc: "Inicia uma conversa no WhatsApp" },
-    { cmd: "location", desc: "Exibe minha localização" },
-    { cmd: "all", desc: "Exibe todas as informações de contato" },
-    { cmd: "clear", desc: "Limpa o terminal" },
-];
-
-const contatos = {
-    email: {
-        valor: "natanaelsantos_silva@outlook.com",
-        link: "mailto:natanaelsantos_silva@outlook.com",
-        icone: "bi-envelope-fill",
-        cor: "#EA4335"
-    },
-    linkedin: {
-        valor: "linkedin.com/in/natanael2ilva",
-        link: "https://www.linkedin.com/in/natanael2ilva",
-        icone: "bi-linkedin",
-        cor: "#0A66C2"
-    },
-    github: {
-        valor: "github.com/n2ilva",
-        link: "https://github.com/n2ilva",
-        icone: "bi-github",
-        cor: "#ffffff"
-    },
-    whatsapp: {
-        valor: "+55 62 99963-3100",
-        link: "https://wa.me/5562999633100",
-        icone: "bi-whatsapp",
-        cor: "#25D366"
-    },
-    location: {
-        valor: "Goiânia-GO, Brasil",
-        link: "https://www.google.com/maps/place/Goiânia,+GO",
-        icone: "bi-geo-alt-fill",
-        cor: "#FF6B6B"
-    }
+const mensagemInicial: Comando = {
+    input: "",
+    output: (
+        <div className="welcome-message">
+            <pre className="ascii-art">
+{`
+  _   _       _                         _   ____  _ _            
+ | \\ | | __ _| |_ __ _ _ __   __ _  ___| | / ___|(_) |_   ____ _ 
+ |  \\| |/ _\` | __/ _\` | '_ \\ / _\` |/ _ \\ | \\___ \\| | \\ \\ / / _\` |
+ | |\\  | (_| | || (_| | | | | (_| |  __/ |  ___) | | |\\ V / (_| |
+ |_| \\_|\\__,_|\\__\\__,_|_| |_|\\__,_|\\___|_| |____/|_|_| \\_/ \\__,_|
+`}
+            </pre>
+            <p className="welcome-text">
+                <span className="highlight">Desenvolvedor Full Stack</span> | Goiânia-GO, Brasil
+            </p>
+            <p className="welcome-hint">
+                Digite <span className="cmd-highlight">help</span> para ver os comandos disponíveis
+            </p>
+        </div>
+    )
 };
 
 export default function Contato() {
-    const [historico, setHistorico] = useState<Comando[]>([]);
+    const [historico, setHistorico] = useState<Comando[]>(() => [mensagemInicial]);
     const [inputAtual, setInputAtual] = useState("");
     const [cursorVisible, setCursorVisible] = useState(true);
     const terminalRef = useRef<HTMLDivElement>(null);
@@ -75,33 +57,6 @@ export default function Contato() {
             terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
         }
     }, [historico]);
-
-    // Mensagem inicial
-    useEffect(() => {
-        const mensagemInicial: Comando = {
-            input: "",
-            output: (
-                <div className="welcome-message">
-                    <pre className="ascii-art">
-{`
-  _   _       _                         _   ____  _ _            
- | \\ | | __ _| |_ __ _ _ __   __ _  ___| | / ___|(_) |_   ____ _ 
- |  \\| |/ _\` | __/ _\` | '_ \\ / _\` |/ _ \\ | \\___ \\| | \\ \\ / / _\` |
- | |\\  | (_| | || (_| | | | | (_| |  __/ |  ___) | | |\\ V / (_| |
- |_| \\_|\\__,_|\\__\\__,_|_| |_|\\__,_|\\___|_| |____/|_|_| \\_/ \\__,_|
-`}
-                    </pre>
-                    <p className="welcome-text">
-                        <span className="highlight">Desenvolvedor Full Stack</span> | Goiânia-GO, Brasil
-                    </p>
-                    <p className="welcome-hint">
-                        Digite <span className="cmd-highlight">help</span> para ver os comandos disponíveis
-                    </p>
-                </div>
-            )
-        };
-        setHistorico([mensagemInicial]);
-    }, []);
 
     const processarComando = (cmd: string) => {
         const comando = cmd.toLowerCase().trim();
@@ -260,6 +215,8 @@ export default function Contato() {
                                 className="terminal-input"
                                 autoFocus
                                 spellCheck={false}
+                                placeholder="Digite um comando..."
+                                aria-label="Terminal de comandos"
                             />
                             <span 
                                 className={`cursor ${cursorVisible ? 'visible' : ''}`}

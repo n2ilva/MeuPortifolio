@@ -72,7 +72,7 @@ export default function Main() {
                             {/* Botão Download para Mobile (aparece na navbar) */}
                             <li className="nav-item mb-2 nav-menu-item download-nav-item">
                                 <a
-                                    href="https://drive.google.com/uc?export=download&id=17p9LjgR_Q38dc1SRoMMPRBsP5QC_8foO"
+                                    href="https://drive.google.com/uc?export=download&id=1ujgw7bJyJIFUXrCwGtzU7nAEsM7bfUf6"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="nav-link d-flex align-items-center rounded-3 px-3 py-2 nav-menu-link download-nav-link"
@@ -86,7 +86,7 @@ export default function Main() {
                         {/* Botão Download Currículo (Desktop) */}
                         <div className="mt-auto w-100 pt-3 pb-4 download-desktop">
                             <a
-                                href="https://drive.google.com/uc?export=download&id=17p9LjgR_Q38dc1SRoMMPRBsP5QC_8foO"
+                                href="https://drive.google.com/uc?export=download&id=1ujgw7bJyJIFUXrCwGtzU7nAEsM7bfUf6"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 download-btn"

@@ -1,19 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 import { profile } from "../config/site.config";
 
-// Helper para corrigir caminho de imagens no GitHub Pages
-const getImagePath = (path: string) => {
-    const basePath = process.env.NODE_ENV === 'production' ? '/MeuPortifolio' : '';
-    return `${basePath}${path}`;
-};
+// Importação centralizada
+import { getImagePath } from "../utils/helpers";
 
 interface ProfileCardProps {
-    onClick: (e: React.MouseEvent) => void;
+    onClick: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 export default function ProfileCard({ onClick }: ProfileCardProps) {
     return (
-        <a
+        <Link
             href="/"
             className="d-flex flex-column align-items-center align-items-sm-start pb-4 mb-3 w-100 text-white text-decoration-none profile-section"
             onClick={onClick}
@@ -34,6 +32,6 @@ export default function ProfileCard({ onClick }: ProfileCardProps) {
             <small className="d-none d-sm-inline profile-subtitle">
                 {profile.role}
             </small>
-        </a>
+        </Link>
     );
 }
