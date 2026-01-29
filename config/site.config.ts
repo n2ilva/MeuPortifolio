@@ -2,7 +2,7 @@
 export const profile = {
     name: "Natanael Ramos",
     role: "Desenvolvedor Web | Mobile",
-    photo: "/photo.jpg",
+    photo: "/photo.jpeg",
     photoAlt: "Foto de perfil - Natanael Ramos"
 };
 
