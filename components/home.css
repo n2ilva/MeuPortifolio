@@ -235,6 +235,28 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* Card clicável */
+.experience-card.clickable {
+    cursor: pointer;
+}
+
+.experience-card.clickable:hover {
+    border-color: var(--card-color);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+}
+
+.experience-card.clickable .exp-area i {
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translateX(-5px);
+}
+
+.experience-card.clickable:hover .exp-area i {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .exp-icon {
     width: 56px;
     height: 56px;

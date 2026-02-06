@@ -32,6 +32,9 @@ export default function ProfileCard({ onClick }: ProfileCardProps) {
             <small className="d-none d-sm-inline profile-subtitle">
                 {profile.role}
             </small>
+            <small className="d-none d-sm-inline profile-subtitle">
+                {profile.role2}
+            </small>
         </Link>
     );
 }

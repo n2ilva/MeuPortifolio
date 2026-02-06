@@ -1,7 +1,8 @@
 // Configurações do Perfil
 export const profile = {
     name: "Natanael Ramos",
-    role: "Desenvolvedor Web | Mobile",
+    role: "Analista de Infraestrutura",
+    role2: "Desenvolvedor WEB | Mobile",
     photo: "/photo.jpeg",
     photoAlt: "Foto de perfil - Natanael Ramos"
 };
@@ -30,8 +31,10 @@ export const experiencias = [
         tempo: `${experience.infraYears} anos`,
         icone: "bi-hdd-network-fill",
         cor: "#6366f1",
-        descricao: "Gerenciamento de Servidores AD e BD • Configuração de Switches, Roteadores e Firewalls Cisco/Fortigate • Implementação de Access Points e Controllers • Configuração de Telefonia IP • Administração de Políticas de Backup",
-        tags: ["Redes", "Segurança", "Servidores", "Telefonia", "Backup"]
+        descricao: "Redes & Segurança • Servidores & Virtualização • Cloud & Banco de Dados • Gestão & Automação",
+        tags: ["Cisco", "Fortigate", "VMware", "Azure", "AWS"],
+        clicavel: true,
+        pagina: "infraestrutura" as const
     },
     {
         area: "Desenvolvimento",
@@ -48,7 +51,7 @@ export interface MenuItem {
     id: string;
     label: string;
     icon: string;
-    page: "home" | "linguagens" | "projetos" | "contato";
+    page: "home" | "linguagens" | "projetos" | "contato" | "infraestrutura";
 }
 
 export const menuItems: MenuItem[] = [
@@ -59,15 +62,15 @@ export const menuItems: MenuItem[] = [
         page: "home"
     },
     {
-        id: "linguagens",
-        label: "Linguagens",
-        icon: "bi-code-slash",
-        page: "linguagens"
+        id: "infraestrutura",
+        label: "Infraestrutura",
+        icon: "bi-hdd-network-fill",
+        page: "infraestrutura"
     },
     {
         id: "projetos",
-        label: "Projetos",
-        icon: "bi-folder-fill",
+        label: "Desenvolvedor",
+        icon: "bi-phone-fill",
         page: "projetos"
     },
     {

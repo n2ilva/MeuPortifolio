@@ -1,5 +1,33 @@
 /* Portfólio Page Styles */
 
+/* Seções */
+.linguagens-section {
+    margin-bottom: 3rem;
+}
+
+.projetos-section {
+    margin-top: 2rem;
+}
+
+.section-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-subtitle i {
+    color: var(--accent-color);
+}
+
+.projetos-hint {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
 .projetos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));

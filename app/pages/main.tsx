@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./main.css";
 
 // Configurações
@@ -14,20 +14,22 @@ import Home from "../../components/home";
 import Linguagens from "../../components/linguagens";
 import Portifolio from "../../components/portifolio";
 import Contato from "../../components/contato";
+import Infraestrutura from "../../components/infraestrutura";
 
-// Tipos das páginas disponíveis
-type PageType = MenuItem["page"];
+// Contexto de navegação
+import { NavigationProvider, useNavigation, PageType } from "../../context/NavigationContext";
 
 // Mapeamento de páginas para componentes
 const pageComponents: Record<PageType, React.ComponentType> = {
     home: Home,
     linguagens: Linguagens,
     projetos: Portifolio,
-    contato: Contato
+    contato: Contato,
+    infraestrutura: Infraestrutura
 };
 
-export default function Main() {
-    const [currentPage, setCurrentPage] = useState<PageType>("home");
+function MainContent() {
+    const { currentPage, navigateTo } = useNavigation();
 
     useEffect(() => {
         // Import bootstrap JS only on the client side
@@ -46,7 +48,7 @@ export default function Main() {
     // Função para navegar entre páginas
     const handleNavigation = (page: PageType, e: React.MouseEvent) => {
         e.preventDefault();
-        setCurrentPage(page);
+        navigateTo(page);
     };
 
     return (
@@ -72,7 +74,7 @@ export default function Main() {
                             {/* Botão Download para Mobile (aparece na navbar) */}
                             <li className="nav-item mb-2 nav-menu-item download-nav-item">
                                 <a
-                                    href="https://drive.google.com/uc?export=download&id=1ujgw7bJyJIFUXrCwGtzU7nAEsM7bfUf6"
+                                    href="https://drive.google.com/uc?export=download&id=1uth6Zmo4UthgDdlgoSnOHpcyLjBGPXQ9"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="nav-link d-flex align-items-center rounded-3 px-3 py-2 nav-menu-link download-nav-link"
@@ -86,7 +88,7 @@ export default function Main() {
                         {/* Botão Download Currículo (Desktop) */}
                         <div className="mt-auto w-100 pt-3 pb-4 download-desktop">
                             <a
-                                href="https://drive.google.com/uc?export=download&id=1ujgw7bJyJIFUXrCwGtzU7nAEsM7bfUf6"
+                                href="https://drive.google.com/uc?export=download&id=1uth6Zmo4UthgDdlgoSnOHpcyLjBGPXQ9"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 download-btn"
@@ -106,5 +108,13 @@ export default function Main() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function Main() {
+    return (
+        <NavigationProvider>
+            <MainContent />
+        </NavigationProvider>
     );
 }

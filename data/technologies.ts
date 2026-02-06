@@ -76,6 +76,34 @@ export const tecnologias: Tecnologia[] = [
         cor: "#3ECF8E",
         descricao: "Alternativa open-source ao Firebase. PostgreSQL com autenticação, storage e APIs em tempo real.",
         categoria: "banco"
+    },
+    {
+        nome: "MongoDB",
+        icone: "devicon-mongodb-plain",
+        cor: "#47A248",
+        descricao: "Banco de dados NoSQL orientado a documentos. Flexível, escalável e ideal para aplicações modernas.",
+        categoria: "banco"
+    },
+    {
+        nome: "PostgreSQL",
+        icone: "devicon-postgresql-plain",
+        cor: "#336791",
+        descricao: "Banco de dados relacional robusto e open-source. Suporte avançado a JSON, extensões e alta performance.",
+        categoria: "banco"
+    },
+    {
+        nome: "Docker",
+        icone: "devicon-docker-plain",
+        cor: "#2496ED",
+        descricao: "Plataforma de containerização para empacotar aplicações. Facilita deploy, escalabilidade e ambientes consistentes.",
+        categoria: "framework"
+    },
+    {
+        nome: "Nginx",
+        icone: "devicon-nginx-original",
+        cor: "#009639",
+        descricao: "Servidor web de alta performance. Usado como proxy reverso, load balancer e servidor de arquivos estáticos.",
+        categoria: "framework"
     }
 ];
 

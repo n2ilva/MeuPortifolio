@@ -1,15 +1,18 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import "./home.css";
 
 // Importações centralizadas
 import { experience, roles, experiencias } from "../config/site.config";
 import { techStackHome } from "../data/technologies";
+import { useNavigation, PageType } from "../context/NavigationContext";
 
 export default function Home() {
     const [roleIndex, setRoleIndex] = useState(0);
     const [displayText, setDisplayText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
+    const { navigateTo } = useNavigation();
 
     useEffect(() => {
         const currentRole = roles[roleIndex];
@@ -59,8 +62,7 @@ export default function Home() {
 
                     <p className="hero-description">
                         Experiência sólida em <strong>infraestrutura de TI com 6 anos de atuação</strong>, 
-                        agora focado nos estudos de desenvolvimento web e mobile para me tornar um 
-                        <strong> desenvolvedor Full Stack</strong> completo.
+                        agora focado nos estudos de desenvolvimento web e mobile.
                     </p>
                 </div>
 
@@ -94,27 +96,38 @@ export default function Home() {
                 </h2>
 
                 <div className="experience-grid">
-                    {experiencias.map((exp, index) => (
-                        <div 
-                            key={index} 
-                            className="experience-card"
-                            style={{ "--card-color": exp.cor } as React.CSSProperties}
-                        >
-                            <div className="exp-icon">
-                                <i className={`bi ${exp.icone}`}></i>
-                            </div>
-                            <div className="exp-content">
-                                <h3 className="exp-area">{exp.area}</h3>
-                                <span className="exp-tempo">{exp.tempo}</span>
-                                <p className="exp-descricao">{exp.descricao}</p>
-                                <div className="exp-tags">
-                                    {exp.tags.map((tag) => (
-                                        <span key={tag} className="exp-tag">{tag}</span>
-                                    ))}
+                    {experiencias.map((exp, index) => {
+                        const isClickable = 'clicavel' in exp && exp.clicavel;
+                        const pagina = 'pagina' in exp ? exp.pagina as PageType : undefined;
+                        
+                        return (
+                            <div 
+                                key={index} 
+                                className={`experience-card ${isClickable ? 'clickable' : ''}`}
+                                style={{ "--card-color": exp.cor } as React.CSSProperties}
+                                onClick={isClickable && pagina ? () => navigateTo(pagina) : undefined}
+                                role={isClickable ? "button" : undefined}
+                                tabIndex={isClickable ? 0 : undefined}
+                            >
+                                <div className="exp-icon">
+                                    <i className={`bi ${exp.icone}`}></i>
+                                </div>
+                                <div className="exp-content">
+                                    <h3 className="exp-area">
+                                        {exp.area}
+                                        {isClickable && <i className="bi bi-arrow-right-circle ms-2"></i>}
+                                    </h3>
+                                    <span className="exp-tempo">{exp.tempo}</span>
+                                    <p className="exp-descricao">{exp.descricao}</p>
+                                    <div className="exp-tags">
+                                        {exp.tags.map((tag) => (
+                                            <span key={tag} className="exp-tag">{tag}</span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </section>
 
@@ -159,7 +172,7 @@ export default function Home() {
                     <span className="stat-label">Ano Desenvolvimento</span>
                 </div>
                 <div className="stat-card">
-                    <span className="stat-number">3</span>
+                    <span className="stat-number">4</span>
                     <span className="stat-label">Projetos Publicados</span>
                 </div>
             </section>
