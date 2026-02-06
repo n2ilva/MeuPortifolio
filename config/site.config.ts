@@ -31,8 +31,8 @@ export const experiencias = [
         tempo: `${experience.infraYears} anos`,
         icone: "bi-hdd-network-fill",
         cor: "#6366f1",
-        descricao: "Redes & Segurança • Servidores & Virtualização • Cloud & Banco de Dados • Gestão & Automação",
-        tags: ["Cisco", "Fortigate", "VMware", "Azure", "AWS"],
+        descricao: "6 anos de experiência em Infraestrutura de Redes e TI, garantindo estabilidade, segurança e alta disponibilidade em ambientes corporativos. Expertise em Windows Server, Unix/Linux, Active Directory, VPN e virtualização (VMware e Hyper-V). Atuação em ambientes Cloud (AWS, Azure e GCP), com práticas baseadas em ITIL e COBIT, foco em SLA, continuidade de serviços e melhoria contínua.",
+        tags: ["Cisco", "Fortigate", "VMware", "Hyper-V", "Azure", "AWS", "ITIL", "COBIT"],
         clicavel: true,
         pagina: "infraestrutura" as const
     },
@@ -42,7 +42,9 @@ export const experiencias = [
         icone: "bi-code-slash",
         cor: "#22c55e",
         descricao: "Desenvolvimento de aplicações Web e Mobile com React, React Native e Next.js • Integração com Firebase e Supabase • Implementação de autenticação e sincronização em tempo real • Criação de plataformas educacionais e ferramentas interativas",
-        tags: ["React", "React Native", "Next.js", "Firebase", "TypeScript"]
+        tags: ["TypeScript", "React", "React Native", "Next.js", "Firebase"],
+        clicavel: true,
+        pagina: "projetos" as const
     }
 ];
 

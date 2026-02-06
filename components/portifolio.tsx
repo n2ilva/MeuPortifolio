@@ -11,7 +11,6 @@ import { projetos } from "../data/projects";
 import { tecnologias, categorias, Tecnologia } from "../data/technologies";
 
 export default function Portifolio() {
-    const [selectedProject, setSelectedProject] = useState<string | null>(null);
     const [hoveredTech, setHoveredTech] = useState<string | null>(null);
     const [clickedTech, setClickedTech] = useState<string | null>(null);
 
@@ -25,30 +24,6 @@ export default function Portifolio() {
 
     const isTechActive = (techNome: string) => {
         return hoveredTech === techNome || clickedTech === techNome;
-    };
-
-    const handleCardClick = (e: React.MouseEvent, projetoId: string) => {
-        // Verifica se é mobile (tela <= 768px)
-        if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-            // Se o projeto não está selecionado, previne o link e mostra a descrição
-            if (selectedProject !== projetoId) {
-                e.preventDefault();
-                setSelectedProject(projetoId);
-            }
-            // Se já está selecionado, permite o clique no link
-        }
-    };
-
-    const handleMouseEnter = (projetoId: string) => {
-        if (typeof window !== 'undefined' && window.innerWidth > 768) {
-            setSelectedProject(projetoId);
-        }
-    };
-
-    const handleMouseLeave = () => {
-        if (typeof window !== 'undefined' && window.innerWidth > 768) {
-            setSelectedProject(null);
-        }
     };
 
     return (
@@ -112,17 +87,11 @@ export default function Portifolio() {
                     <i className="bi bi-folder-fill"></i>
                     Meus Projetos
                 </h2>
-                <p className="projetos-hint">
-                    <span className="mobile-hint">Toque para ver detalhes, toque novamente para visitar.</span>
-                </p>
-
             <div className="projetos-grid">
                 {projetos.map((projeto) => (
                     <article
                         key={projeto.id}
-                        className={`projeto-card ${projeto.destaque ? 'destaque' : ''} ${selectedProject === projeto.id ? 'expanded' : ''}`}
-                        onMouseEnter={() => handleMouseEnter(projeto.id)}
-                        onMouseLeave={handleMouseLeave}
+                        className={`projeto-card ${projeto.destaque ? 'destaque' : ''}`}
                     >
                         {projeto.destaque && (
                             <div className="destaque-badge">
@@ -136,7 +105,6 @@ export default function Portifolio() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="projeto-link"
-                            onClick={(e) => handleCardClick(e, projeto.id)}
                         >
                             <div className="projeto-imagem-wrapper">
                                 <Image
@@ -165,14 +133,6 @@ export default function Portifolio() {
                                             {tech}
                                         </span>
                                     ))}
-                                </div>
-
-                                {/* Botão visitar para mobile quando expandido */}
-                                <div className="mobile-visit-btn">
-                                    <span>
-                                        <i className="bi bi-box-arrow-up-right"></i>
-                                        Toque novamente para visitar
-                                    </span>
                                 </div>
                             </div>
                         </a>

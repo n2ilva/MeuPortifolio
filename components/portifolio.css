@@ -185,18 +185,6 @@
     line-height: 1.6;
     color: var(--color-text-secondary);
     margin: 0 0 1.25rem 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.projeto-card:hover .projeto-descricao {
-    -webkit-line-clamp: unset;
-    line-clamp: unset;
-    display: block;
 }
 
 /* Tags de Tecnologias */
@@ -235,35 +223,10 @@
 
 /* Responsivo */
 
-/* Elementos ocultos no desktop */
-.mobile-hint {
-    display: none;
-}
-
-.mobile-visit-btn {
-    display: none;
-}
-
 @media (max-width: 768px) {
     .projetos-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-    }
-
-    /* Mostrar dica mobile */
-    .mobile-hint {
-        display: inline;
-        color: var(--color-text-muted);
-        font-size: 0.9rem;
-    }
-
-    /* Desabilitar hover no mobile */
-    .projeto-card:hover {
-        transform: none;
-    }
-
-    .projeto-card:hover .projeto-overlay {
-        opacity: 0;
     }
 
     .projeto-conteudo {
@@ -272,62 +235,6 @@
 
     .projeto-nome {
         font-size: 1.1rem;
-    }
-
-    /* Descrição cortada por padrão */
-    .projeto-descricao {
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-    }
-
-    /* Card expandido */
-    .projeto-card.expanded {
-        border-color: var(--color-primary);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4),
-                    0 0 30px rgba(13, 110, 253, 0.2);
-    }
-
-    .projeto-card.expanded.destaque {
-        border-color: rgba(255, 193, 7, 0.6);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4),
-                    0 0 30px rgba(255, 193, 7, 0.2);
-    }
-
-    /* Mostrar descrição completa quando expandido */
-    .projeto-card.expanded .projeto-descricao {
-        -webkit-line-clamp: unset;
-        line-clamp: unset;
-        display: block;
-    }
-
-    /* Botão de visitar mobile */
-    .mobile-visit-btn {
-        display: none;
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: 1px solid var(--color-border-light);
-    }
-
-    .projeto-card.expanded .mobile-visit-btn {
-        display: block;
-    }
-
-    .mobile-visit-btn span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        background: var(--color-primary);
-        color: white;
-        padding: 12px 20px;
-        border-radius: 10px;
-        font-weight: 600;
-        font-size: 0.85rem;
-    }
-
-    .projeto-card.expanded.destaque .mobile-visit-btn span {
-        background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
-        color: #1a1a2e;
     }
 }
 

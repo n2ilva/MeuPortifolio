@@ -5,7 +5,6 @@ import "./home.css";
 
 // Importações centralizadas
 import { experience, roles, experiencias } from "../config/site.config";
-import { techStackHome } from "../data/technologies";
 import { useNavigation, PageType } from "../context/NavigationContext";
 
 export default function Home() {
@@ -131,31 +130,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Tech Stack Section */}
-            <section className="tech-section" id="tecnologias">
-                <h2 className="section-title">
-                    <i className="bi bi-cpu-fill"></i>
-                    Tecnologias
-                </h2>
 
-                <div className="tech-carousel">
-                    {techStackHome.map((tech, index) => (
-                        <div 
-                            key={index} 
-                            className="tech-item"
-                            style={{ "--tech-color": tech.cor } as React.CSSProperties}
-                        >
-                            <i className={tech.icone} style={{ color: tech.cor }}></i>
-                            <span>{tech.nome}</span>
-                        </div>
-                    ))}
-                </div>
-
-                <div className="infra-badge">
-                    <i className="bi bi-shield-check"></i>
-                    <span>Infraestrutura: <strong>Cisco</strong> • <strong>Fortigate</strong> • <strong>Dell</strong></span>
-                </div>
-            </section>
 
             {/* Stats Section */}
             <section className="stats-section">
