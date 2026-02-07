@@ -8,6 +8,7 @@
       {
         "aria-roles": "off"
       }
-    ]
+    ],
+    "typescript-config/consistent-casing": "off"
   }
 }

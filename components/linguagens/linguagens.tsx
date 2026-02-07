@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import PageContainer from "./PageContainer";
+import PageContainer from "../PageContainer";
 import "./linguagens.css";
 
 // Importações centralizadas
-import { tecnologias, categorias, Tecnologia } from "../data/technologies";
+import { tecnologias, categorias, Tecnologia } from "../../data/technologies";
 
 export default function Linguagens() {
     const [hoveredTech, setHoveredTech] = useState<string | null>(null);

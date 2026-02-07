@@ -10,11 +10,11 @@ import ProfileCard from "../../components/ProfileCard";
 import NavMenuItem from "../../components/NavMenuItem";
 
 // Componentes de página
-import Home from "../../components/home";
-import Linguagens from "../../components/linguagens";
-import Portifolio from "../../components/portifolio";
-import Contato from "../../components/contato";
-import Infraestrutura from "../../components/infraestrutura";
+import Home from "../../components/home/home";
+import Linguagens from "../../components/linguagens/linguagens";
+import Portifolio from "../../components/portifolio/portifolio";
+import Contato from "../../components/contato/contato";
+import Infraestrutura from "../../components/infraestrutura/infraestrutura";
 
 // Contexto de navegação
 import { NavigationProvider, useNavigation, PageType } from "../../context/NavigationContext";

@@ -99,6 +99,13 @@ export const tecnologias: Tecnologia[] = [
         categoria: "framework"
     },
     {
+        nome: "Express",
+        icone: "devicon-express-original",
+        cor: "#ffffff",
+        descricao: "Framework minimalista para Node.js. Ideal para criar APIs RESTful e aplicações web de forma rápida e flexível.",
+        categoria: "framework"
+    },
+    {
         nome: "Nginx",
         icone: "devicon-nginx-original",
         cor: "#009639",

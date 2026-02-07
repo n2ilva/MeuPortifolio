@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import PageContainer from "./PageContainer";
+import PageContainer from "../PageContainer";
 import "./contato.css";
 
 // Importações centralizadas
-import { contatos, comandosDisponiveis } from "../data/contacts";
+import { contatos, comandosDisponiveis } from "../../data/contacts";
 
 interface Comando {
     input: string;
