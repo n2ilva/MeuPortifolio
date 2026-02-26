@@ -30,7 +30,7 @@ export const projetos: Projeto[] = [
         id: "sara-ramos",
         nome: "Sara Ramos - Professora Infantil",
         descricao: "Plataforma educacional completa desenvolvida para Sara Ramos, educadora infantil. Oferece uma loja virtual com atividades pedagógicas prontas para uso, e-books e videoaulas exclusivas. Integração com MercadoPago para pagamentos e autenticação via Google OAuth. Conta também com uma seção gratuita de jogos educativos interativos.",
-        imagem: "/sara-ramos.png",
+        imagem: "/sara-ramos.svg",
         link: "https://sararamos.com.br/",
         tecnologias: ["TypeScript", "Next.js", "React", "Express", "MongoDB", "MercadoPago", "Google OAuth"]
     },
@@ -41,5 +41,13 @@ export const projetos: Projeto[] = [
         imagem: "/controlefinanceiro.jpeg",
         link: "https://drive.google.com/drive/folders/1BwaKfJqufa45FIztm5So6KXLNCZfWiuC?usp=sharing",
         tecnologias: ["TypeScript", "React Native", "Expo", "Firebase Auth", "Firebase Realtime DB"]
+    },
+    {
+        id: "motorista-inteligente",
+        nome: "Motorista Inteligente",
+        descricao: "Aplicativo inteligente para motoristas Uber e 99 que analisa se uma oferta de corrida é vantajosa, com base em parâmetros configuráveis pelo próprio motorista. Inclui mapa de demanda em tempo real das cidades e bairros próximos (dados reais captados de motoristas online), configuração do veículo com cálculo do melhor combustível, e análise semanal dos 7 dias com indicadores de performance por dia.",
+        imagem: "/logo-motorista-comfundo.png",
+        link: "https://github.com/n2ilva/MotoristaInteligente",
+        tecnologias: ["Kotlin", "Firebase Auth", "Firebase Realtime DB", "Google OAuth"]
     }
 ];

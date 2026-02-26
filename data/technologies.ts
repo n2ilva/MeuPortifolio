@@ -111,6 +111,20 @@ export const tecnologias: Tecnologia[] = [
         cor: "#009639",
         descricao: "Servidor web de alta performance. Usado como proxy reverso, load balancer e servidor de arquivos estáticos.",
         categoria: "framework"
+    },
+    {
+        nome: "Kotlin",
+        icone: "devicon-kotlin-plain",
+        cor: "#7F52FF",
+        descricao: "Linguagem moderna para JVM e Android. Concisa, segura e interoperável com Java, ideal para apps mobile e backend.",
+        categoria: "linguagem"
+    },
+    {
+        nome: "Jetpack Compose",
+        icone: "devicon-jetpackcompose-plain",
+        cor: "#4285F4",
+        descricao: "Toolkit moderno de UI declarativa para Android com Kotlin. Simplifica a criação de interfaces nativas e reativas.",
+        categoria: "framework"
     }
 ];
 
