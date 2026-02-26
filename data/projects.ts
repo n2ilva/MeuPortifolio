@@ -38,7 +38,7 @@ export const projetos: Projeto[] = [
         id: "controle-financeiro",
         nome: "Controle Financeiro",
         descricao: "Aplicativo Android para gestão financeira pessoal e em grupo. Controle de entradas (salário, 13º, férias, bonificações) e saídas com categorias personalizáveis. Funcionalidades de grupos compartilhados, controle de cartões de crédito com faturas mensais e análises gráficas detalhadas.",
-        imagem: "/controlefinanceiro.jpeg",
+        imagem: "/controlefinanceiro.png",
         link: "https://drive.google.com/drive/folders/1BwaKfJqufa45FIztm5So6KXLNCZfWiuC?usp=sharing",
         tecnologias: ["TypeScript", "React Native", "Expo", "Firebase Auth", "Firebase Realtime DB"]
     },
