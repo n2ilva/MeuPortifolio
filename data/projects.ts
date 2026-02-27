@@ -24,7 +24,7 @@ export const projetos: Projeto[] = [
         descricao: "Ferramenta web intuitiva inspirada no Canva e PowerPoint, projetada para automatizar a criação de portfólios e apresentações. Focado em educadores, oferece integração direta com Google Fotos e Google Drive, templates personalizáveis, interface drag-and-drop, e exportação versátil em MP4 (com trilha sonora) ou PDF.",
         imagem: "/portfolio-maker.png",
         link: "https://portifoliomaker.netlify.app/",
-        tecnologias: ["TypeScript", "Angular", "Firebase", "Google OAuth", "Google Photos API", "Google Drive API"]
+        tecnologias: ["TypeScript", "Firebase", "Google OAuth", "Google Photos API", "Google Drive API"]
     },
     {
         id: "sara-ramos",
@@ -32,7 +32,7 @@ export const projetos: Projeto[] = [
         descricao: "Plataforma educacional completa desenvolvida para Sara Ramos, educadora infantil. Oferece uma loja virtual com atividades pedagógicas prontas para uso, e-books e videoaulas exclusivas. Integração com MercadoPago para pagamentos e autenticação via Google OAuth. Conta também com uma seção gratuita de jogos educativos interativos.",
         imagem: "/sara-ramos.svg",
         link: "https://sararamos.com.br/",
-        tecnologias: ["TypeScript", "Next.js", "React", "Express", "MongoDB", "MercadoPago", "Google OAuth"]
+        tecnologias: ["TypeScript", "Next.js", "React", "Express", "MongoDB", "MercadoPago", "Stripe", "Google OAuth"]
     },
     {
         id: "controle-financeiro",

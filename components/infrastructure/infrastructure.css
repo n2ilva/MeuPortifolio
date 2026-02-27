@@ -22,6 +22,12 @@
     overflow: hidden;
 }
 
+.infra-card.infra-card-0 { --card-color: #6366f1; }
+.infra-card.infra-card-1 { --card-color: #8b5cf6; }
+.infra-card.infra-card-2 { --card-color: #ec4899; }
+.infra-card.infra-card-3 { --card-color: #0ea5e9; }
+.infra-card.infra-card-4 { --card-color: #22c55e; }
+
 .infra-card::before {
     content: '';
     position: absolute;
@@ -350,6 +356,12 @@
     font-size: 1.5rem;
     flex-shrink: 0;
 }
+
+.curso-icon .course-icon-aws { color: #FF9900; }
+.curso-icon .course-icon-microsoft { color: #0078D4; }
+.curso-icon .course-icon-google { color: #4285F4; }
+.curso-icon .course-icon-fortigate { color: #EE3124; }
+.curso-icon .course-icon-cisco { color: #1BA0D7; }
 
 .curso-info {
     flex: 1;

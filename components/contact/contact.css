@@ -149,7 +149,7 @@
     font-size: inherit;
     outline: none;
     width: 100%;
-    caret-color: transparent;
+    caret-color: #27ca40;
 }
 
 .cursor {
@@ -265,6 +265,12 @@
     font-size: 0.9rem;
 }
 
+.contact-link.contact-color-email { --contact-color: #EA4335; }
+.contact-link.contact-color-linkedin { --contact-color: #0A66C2; }
+.contact-link.contact-color-github { --contact-color: #ffffff; }
+.contact-link.contact-color-whatsapp { --contact-color: #25D366; }
+.contact-link.contact-color-location { --contact-color: #FF6B6B; }
+
 .contact-link:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--contact-color);
@@ -350,6 +356,12 @@
     text-decoration: none;
     transition: all 0.3s ease;
 }
+
+.quick-btn.quick-btn-email { --btn-color: #EA4335; }
+.quick-btn.quick-btn-linkedin { --btn-color: #0A66C2; }
+.quick-btn.quick-btn-github { --btn-color: #ffffff; }
+.quick-btn.quick-btn-whatsapp { --btn-color: #25D366; }
+.quick-btn.quick-btn-location { --btn-color: #FF6B6B; }
 
 .quick-btn:hover {
     background: rgba(255, 255, 255, 0.1);

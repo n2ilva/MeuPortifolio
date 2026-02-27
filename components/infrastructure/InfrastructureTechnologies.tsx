@@ -82,7 +82,7 @@ const infraCategorias: InfraCategoria[] = [
     }
 ];
 
-export default function InfraTecnologias() {
+export default function InfrastructureTechnologies() {
     return (
         <>
             <p className="intro-text">
@@ -94,8 +94,7 @@ export default function InfraTecnologias() {
                 {infraCategorias.map((categoria, index) => (
                     <div 
                         key={index} 
-                        className="infra-card"
-                        style={{ "--card-color": categoria.cor } as React.CSSProperties}
+                        className={`infra-card infra-card-${index}`}
                     >
                         <div className="infra-card-header">
                             <div className="infra-icon">

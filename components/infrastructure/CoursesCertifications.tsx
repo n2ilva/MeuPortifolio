@@ -1,6 +1,6 @@
 "use client";
 
-export default function CursosCertificacoes() {
+export default function CoursesCertifications() {
     return (
         <section className="cursos-section">
             <h2 className="section-subtitle">
@@ -11,7 +11,7 @@ export default function CursosCertificacoes() {
             <div className="cursos-grid">
                 <div className="curso-card">
                     <div className="curso-icon">
-                        <i className="bi bi-cloud-fill" style={{ color: '#FF9900' }}></i>
+                        <i className="bi bi-cloud-fill course-icon-aws"></i>
                     </div>
                     <div className="curso-info">
                         <h4>Amazon AWS Certified Cloud</h4>
@@ -21,7 +21,7 @@ export default function CursosCertificacoes() {
                 </div>
                 <div className="curso-card">
                     <div className="curso-icon">
-                        <i className="bi bi-microsoft" style={{ color: '#0078D4' }}></i>
+                        <i className="bi bi-microsoft course-icon-microsoft"></i>
                     </div>
                     <div className="curso-info">
                         <h4>Microsoft AZ-900</h4>
@@ -31,7 +31,7 @@ export default function CursosCertificacoes() {
                 </div>
                 <div className="curso-card">
                     <div className="curso-icon">
-                        <i className="bi bi-google" style={{ color: '#4285F4' }}></i>
+                        <i className="bi bi-google course-icon-google"></i>
                     </div>
                     <div className="curso-info">
                         <h4>Google Associate Cloud Engineer</h4>
@@ -41,7 +41,7 @@ export default function CursosCertificacoes() {
                 </div>
                 <div className="curso-card">
                     <div className="curso-icon">
-                        <i className="bi bi-shield-lock-fill" style={{ color: '#EE3124' }}></i>
+                        <i className="bi bi-shield-lock-fill course-icon-fortigate"></i>
                     </div>
                     <div className="curso-info">
                         <h4>Fortigate Firewall NSE4</h4>
@@ -51,7 +51,7 @@ export default function CursosCertificacoes() {
                 </div>
                 <div className="curso-card">
                     <div className="curso-icon">
-                        <i className="bi bi-hdd-network-fill" style={{ color: '#1BA0D7' }}></i>
+                        <i className="bi bi-hdd-network-fill course-icon-cisco"></i>
                     </div>
                     <div className="curso-info">
                         <h4>CCNA 200-301</h4>

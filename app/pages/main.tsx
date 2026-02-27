@@ -11,10 +11,10 @@ import NavMenuItem from "../../components/NavMenuItem";
 
 // Componentes de página
 import Home from "../../components/home/home";
-import Linguagens from "../../components/linguagens/linguagens";
-import Portifolio from "../../components/portifolio/portifolio";
-import Contato from "../../components/contato/contato";
-import Infraestrutura from "../../components/infraestrutura/infraestrutura";
+import TechnologiesPage from "../../components/development/technologies-page";
+import DeveloperPage from "../../components/development/developer-page";
+import ContactPage from "../../components/contact/contact";
+import InfrastructurePage from "../../components/infrastructure/infrastructure";
 
 // Contexto de navegação
 import { NavigationProvider, useNavigation, PageType } from "../../context/NavigationContext";
@@ -22,10 +22,10 @@ import { NavigationProvider, useNavigation, PageType } from "../../context/Navig
 // Mapeamento de páginas para componentes
 const pageComponents: Record<PageType, React.ComponentType> = {
     home: Home,
-    linguagens: Linguagens,
-    projetos: Portifolio,
-    contato: Contato,
-    infraestrutura: Infraestrutura
+    linguagens: TechnologiesPage,
+    projetos: DeveloperPage,
+    contato: ContactPage,
+    infraestrutura: InfrastructurePage
 };
 
 function MainContent() {

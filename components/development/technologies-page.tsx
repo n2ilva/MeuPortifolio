@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
 import PageContainer from "../PageContainer";
-import "./linguagens.css";
+import "./technologies-page.css";
 
 // Importações centralizadas
 import { tecnologias, categorias, Tecnologia } from "../../data/technologies";
 
-export default function Linguagens() {
+export default function TecnologiasPage() {
     const [hoveredTech, setHoveredTech] = useState<string | null>(null);
     const [clickedTech, setClickedTech] = useState<string | null>(null);
 
@@ -22,6 +22,14 @@ export default function Linguagens() {
     // Verifica se a tech está ativa (por hover OU por clique)
     const isTechActive = (techNome: string) => {
         return hoveredTech === techNome || clickedTech === techNome;
+    };
+
+    const getTechSlug = (techNome: string) => {
+        return techNome
+            .toLowerCase()
+            .replace(/\./g, "")
+            .replace(/\+/g, "plus")
+            .replace(/\s+/g, "-");
     };
 
     return (
@@ -41,14 +49,13 @@ export default function Linguagens() {
                         {getTecnologiasPorCategoria(categoriaKey).map((tech) => (
                             <div
                                 key={tech.nome}
-                                className={`tech-card ${isTechActive(tech.nome) ? 'active' : ''}`}
+                                className={`tech-card tech-color-${getTechSlug(tech.nome)} ${isTechActive(tech.nome) ? 'active' : ''}`}
                                 onClick={() => handleTechClick(tech.nome)}
                                 onMouseEnter={() => setHoveredTech(tech.nome)}
                                 onMouseLeave={() => setHoveredTech(null)}
-                                style={{ '--tech-color': tech.cor } as React.CSSProperties}
                             >
                                 <div className="tech-icon-wrapper">
-                                    <i className={`${tech.icone} tech-icon`} style={{ color: tech.cor }}></i>
+                                    <i className={`${tech.icone} tech-icon tech-icon-colored ${tech.icone.includes("wordmark") ? "tech-icon-wordmark" : ""}`}></i>
                                 </div>
                                 <h3 className="tech-nome">{tech.nome}</h3>
                                 
@@ -56,7 +63,7 @@ export default function Linguagens() {
                                 <div className={`tech-tooltip ${isTechActive(tech.nome) ? 'visible' : ''}`}>
                                     <div className="tooltip-content">
                                         <div className="tooltip-header">
-                                            <i className={`${tech.icone}`} style={{ color: tech.cor }}></i>
+                                            <i className={`${tech.icone} tooltip-icon-colored ${tech.icone.includes("wordmark") ? "tooltip-icon-wordmark" : ""}`}></i>
                                             <span>{tech.nome}</span>
                                         </div>
                                         <p>{tech.descricao}</p>

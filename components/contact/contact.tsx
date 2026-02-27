@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import PageContainer from "../PageContainer";
-import "./contato.css";
+import "./contact.css";
 
 // Importações centralizadas
 import { contatos, comandosDisponiveis } from "../../data/contacts";
@@ -36,7 +36,7 @@ const mensagemInicial: Comando = {
     )
 };
 
-export default function Contato() {
+export default function ContactPage() {
     const [historico, setHistorico] = useState<Comando[]>(() => [mensagemInicial]);
     const [inputAtual, setInputAtual] = useState("");
     const [cursorVisible, setCursorVisible] = useState(true);
@@ -91,8 +91,7 @@ export default function Contato() {
                             href={info.link} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="contact-link"
-                            style={{ "--contact-color": info.cor } as React.CSSProperties}
+                            className={`contact-link contact-color-${comando}`}
                         >
                             <i className={`bi ${info.icone}`}></i>
                             <span>{info.valor}</span>
@@ -112,8 +111,7 @@ export default function Contato() {
                                 href={info.link} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="contact-link"
-                                style={{ "--contact-color": info.cor } as React.CSSProperties}
+                                className={`contact-link contact-color-${key}`}
                             >
                                 <i className={`bi ${info.icone}`}></i>
                                 <span>{info.valor}</span>
@@ -218,10 +216,7 @@ export default function Contato() {
                                 placeholder="Digite um comando..."
                                 aria-label="Terminal de comandos"
                             />
-                            <span 
-                                className={`cursor ${cursorVisible ? 'visible' : ''}`}
-                                style={{ left: `${inputAtual.length * 9.6}px` }}
-                            ></span>
+                            <span className={`cursor ${cursorVisible ? 'visible' : ''}`}></span>
                         </div>
                     </div>
                 </div>
@@ -236,8 +231,7 @@ export default function Contato() {
                             href={info.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="quick-btn"
-                            style={{ "--btn-color": info.cor } as React.CSSProperties}
+                            className={`quick-btn quick-btn-${key}`}
                             title={info.valor}
                         >
                             <i className={`bi ${info.icone}`}></i>

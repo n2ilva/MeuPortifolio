@@ -45,6 +45,31 @@
     overflow: visible;
 }
 
+.tech-card.tech-color-javascript { --tech-color: #F7DF1E; }
+.tech-card.tech-color-typescript { --tech-color: #3178C6; }
+.tech-card.tech-color-nodejs { --tech-color: #339933; }
+.tech-card.tech-color-nextjs { --tech-color: #ffffff; }
+.tech-card.tech-color-react { --tech-color: #61DAFB; }
+.tech-card.tech-color-react-native { --tech-color: #61DAFB; }
+.tech-card.tech-color-tailwind-css { --tech-color: #06B6D4; }
+.tech-card.tech-color-bootstrap { --tech-color: #563D7C; }
+.tech-card.tech-color-firebase { --tech-color: #FFCA28; }
+.tech-card.tech-color-supabase { --tech-color: #3ECF8E; }
+.tech-card.tech-color-mongodb { --tech-color: #47A248; }
+.tech-card.tech-color-postgresql { --tech-color: #336791; }
+.tech-card.tech-color-docker { --tech-color: #2496ED; }
+.tech-card.tech-color-git { --tech-color: #F05032; }
+.tech-card.tech-color-github { --tech-color: #181717; }
+.tech-card.tech-color-stripe { --tech-color: #635BFF; }
+.tech-card.tech-color-aws-ec2 { --tech-color: #FF9900; }
+.tech-card.tech-color-aws-s3 { --tech-color: #FF9900; }
+.tech-card.tech-color-aws-aurora { --tech-color: #FF9900; }
+.tech-card.tech-color-aws-dynamodb { --tech-color: #FF9900; }
+.tech-card.tech-color-aws-lambda { --tech-color: #FF9900; }
+.tech-card.tech-color-express { --tech-color: #ffffff; }
+.tech-card.tech-color-kotlin { --tech-color: #7F52FF; }
+.tech-card.tech-color-jetpack-compose { --tech-color: #4285F4; }
+
 .tech-card:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--tech-color);
@@ -54,7 +79,7 @@
 }
 
 .tech-card.active {
-    z-index: 10;
+    z-index: 1200;
 }
 
 /* Wrapper do Ícone */
@@ -79,6 +104,15 @@
 .tech-icon {
     font-size: 2.5rem;
     transition: all 0.3s ease;
+}
+
+.tech-icon-wordmark {
+    font-size: 1.45rem;
+}
+
+.tech-icon-colored,
+.tooltip-icon-colored {
+    color: var(--tech-color);
 }
 
 .tech-card:hover .tech-icon {
@@ -108,7 +142,7 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 100;
+    z-index: 1300;
     pointer-events: none;
 }
 
@@ -149,6 +183,10 @@
 
 .tooltip-header i {
     font-size: 1.25rem;
+}
+
+.tooltip-header i.tooltip-icon-wordmark {
+    font-size: 0.95rem;
 }
 
 .tooltip-header span {
@@ -192,6 +230,10 @@
 
     .tech-icon {
         font-size: 2rem;
+    }
+
+    .tech-icon-wordmark {
+        font-size: 1.1rem;
     }
 
     /* Ocultar tooltip tradicional no mobile */

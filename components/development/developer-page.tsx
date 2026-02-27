@@ -1,19 +1,19 @@
 "use client";
 import PageContainer from "../PageContainer";
-import DevLinguagens from "./DevLinguagens";
-import DevProjetos from "./DevProjetos";
-import "./portifolio.css";
-import "./linguagens.css";
+import SkillsSection from "./skills-section";
+import ProjectsSection from "./projects-section";
+import "./developer-page.css";
+import "./skills-section.css";
 
-export default function Portifolio() {
+export default function DeveloperPage() {
     return (
         <PageContainer title="Desenvolvedor">
             <p className="intro-text">
                 Tecnologias que estou estudando há <strong>1 ano</strong> e projetos desenvolvidos com dedicação.
             </p>
 
-            <DevLinguagens />
-            <DevProjetos />
+            <SkillsSection />
+            <ProjectsSection />
         </PageContainer>
     );
 }

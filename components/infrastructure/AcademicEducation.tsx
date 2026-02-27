@@ -1,6 +1,6 @@
 "use client";
 
-export default function FormacaoAcademica() {
+export default function AcademicEducation() {
     return (
         <section className="formacao-section">
             <h2 className="section-subtitle">

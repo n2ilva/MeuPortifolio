@@ -3,7 +3,7 @@ export interface Tecnologia {
     icone: string;
     cor: string;
     descricao: string;
-    categoria: "linguagem" | "framework" | "banco";
+    categoria: "linguagem" | "framework" | "banco" | "cloud";
 }
 
 export const tecnologias: Tecnologia[] = [
@@ -99,17 +99,66 @@ export const tecnologias: Tecnologia[] = [
         categoria: "framework"
     },
     {
+        nome: "Git",
+        icone: "devicon-git-plain",
+        cor: "#F05032",
+        descricao: "Sistema de controle de versão distribuído para rastrear mudanças no código, facilitar colaboração e manter histórico do projeto.",
+        categoria: "framework"
+    },
+    {
+        nome: "GitHub",
+        icone: "devicon-github-original",
+        cor: "#181717",
+        descricao: "Plataforma para hospedagem de repositórios Git, revisão de código, colaboração em equipe e automações com workflows.",
+        categoria: "framework"
+    },
+    {
+        nome: "Stripe",
+        icone: "bi bi-stripe",
+        cor: "#635BFF",
+        descricao: "Plataforma de pagamentos online para processar cobranças, assinaturas e checkout com segurança via APIs.",
+        categoria: "framework"
+    },
+    {
+        nome: "AWS EC2",
+        icone: "devicon-amazonwebservices-plain-wordmark",
+        cor: "#FF9900",
+        descricao: "Serviço de computação em nuvem da AWS para provisionar e escalar servidores virtuais sob demanda.",
+        categoria: "cloud"
+    },
+    {
+        nome: "AWS S3",
+        icone: "devicon-amazonwebservices-plain-wordmark",
+        cor: "#FF9900",
+        descricao: "Serviço de armazenamento de objetos da AWS para arquivos estáticos, backups e distribuição de conteúdo.",
+        categoria: "cloud"
+    },
+    {
+        nome: "AWS Aurora",
+        icone: "devicon-amazonwebservices-plain-wordmark",
+        cor: "#FF9900",
+        descricao: "Banco de dados relacional gerenciado da AWS compatível com MySQL e PostgreSQL, com alta disponibilidade e performance.",
+        categoria: "cloud"
+    },
+    {
+        nome: "AWS DynamoDB",
+        icone: "devicon-amazonwebservices-plain-wordmark",
+        cor: "#FF9900",
+        descricao: "Banco NoSQL gerenciado da AWS com baixa latência para aplicações escaláveis e orientadas a eventos.",
+        categoria: "cloud"
+    },
+    {
+        nome: "AWS Lambda",
+        icone: "devicon-amazonwebservices-plain-wordmark",
+        cor: "#FF9900",
+        descricao: "Serviço serverless da AWS para executar funções em resposta a eventos sem gerenciar servidores.",
+        categoria: "cloud"
+    },
+    {
         nome: "Express",
         icone: "devicon-express-original",
         cor: "#ffffff",
         descricao: "Framework minimalista para Node.js. Ideal para criar APIs RESTful e aplicações web de forma rápida e flexível.",
-        categoria: "framework"
-    },
-    {
-        nome: "Nginx",
-        icone: "devicon-nginx-original",
-        cor: "#009639",
-        descricao: "Servidor web de alta performance. Usado como proxy reverso, load balancer e servidor de arquivos estáticos.",
         categoria: "framework"
     },
     {
@@ -146,5 +195,9 @@ export const categorias = {
     banco: {
         titulo: "Bancos de Dados & BaaS",
         icone: "bi-database"
+    },
+    cloud: {
+        titulo: "Cloud (AWS)",
+        icone: "bi-cloud-fill"
     }
 } as const;
