@@ -18,10 +18,9 @@ export const experience = {
 
 // Roles para animação na Home
 export const roles = [
-    "Desenvolvedor Full Stack",
+    "Analista de Infraestrutura e Redes",
     "Desenvolvedor Web",
     "Desenvolvedor Mobile",
-    "Analista de Infraestrutura"
 ];
 
 // Experiências detalhadas

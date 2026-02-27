@@ -53,8 +53,8 @@ export default function HomeHeader() {
                 </div>
 
                 <p className="hero-description">
-                    Experiência sólida em <strong>infraestrutura de TI com 6 anos de atuação</strong>, 
-                    agora focado nos estudos de desenvolvimento web e mobile.
+                    Experiência sólida em <strong>infraestrutura de TI, com 6 anos de atuação</strong>, 
+                    aliada a estudos contínuos em desenvolvimento web e mobile para ampliar soluções ponta a ponta.
                 </p>
             </div>
 
