@@ -14,17 +14,9 @@ export const projetos: Projeto[] = [
         nome: "Agenda Familiar",
         descricao: "Aplicativo de agenda colaborativa em tempo real para famílias e grupos. Sincronização instantânea de tarefas entre todos os membros, com modo privado para anotações pessoais. Recursos avançados incluem: gestão de permissões Admin/Usuário, calendário integrado com feriados nacionais, tema escuro, suporte multilíngue e autenticação via Google.",
         imagem: "/agenda-familiar.png",
-        link: "https://www.agendafamiliar.app/",
+        link: "https://agendafamiliar.app/",
         tecnologias: ["TypeScript", "React Native", "Expo", "Firebase Auth", "Firebase Realtime DB"],
         destaque: true
-    },
-    {
-        id: "portfolio-maker",
-        nome: "Portfólio Maker",
-        descricao: "Ferramenta web intuitiva inspirada no Canva e PowerPoint, projetada para automatizar a criação de portfólios e apresentações. Focado em educadores, oferece integração direta com Google Fotos e Google Drive, templates personalizáveis, interface drag-and-drop, e exportação versátil em MP4 (com trilha sonora) ou PDF.",
-        imagem: "/portfolio-maker.png",
-        link: "https://portifoliomaker.netlify.app/",
-        tecnologias: ["TypeScript", "Firebase", "Google OAuth", "Google Photos API", "Google Drive API"]
     },
     {
         id: "sara-ramos",
@@ -39,7 +31,7 @@ export const projetos: Projeto[] = [
         nome: "Controle Financeiro",
         descricao: "Aplicativo Android para gestão financeira pessoal e em grupo. Controle de entradas (salário, 13º, férias, bonificações) e saídas com categorias personalizáveis. Funcionalidades de grupos compartilhados, controle de cartões de crédito com faturas mensais e análises gráficas detalhadas.",
         imagem: "/controlefinanceiro.png",
-        link: "https://drive.google.com/drive/folders/1BwaKfJqufa45FIztm5So6KXLNCZfWiuC?usp=sharing",
+        link: "https://n2ilva.github.io/ControleFinanceiro/",
         tecnologias: ["TypeScript", "React Native", "Expo", "Firebase Auth", "Firebase Realtime DB"]
     },
     {
@@ -49,5 +41,13 @@ export const projetos: Projeto[] = [
         imagem: "/logo-motorista-comfundo.png",
         link: "https://github.com/n2ilva/MotoristaInteligente",
         tecnologias: ["Kotlin", "Firebase Auth", "Firebase Realtime DB", "Google OAuth"]
+    },
+    {
+        id: "card-master",
+        nome: "CardMaster",
+        descricao: "Aplicativo desenvolvido para potencializar o aprendizado por meio de questões em formato de cards. Cada item apresenta a resposta correta com explicação objetiva e exemplo prático de aplicação. O projeto inclui acompanhamento de progresso e nivelamento dinâmico com base na taxa de acertos do usuário.",
+        imagem: "/CadMaster.png",
+        link: "https://n2ilva.github.io/CardMaster/",
+        tecnologias: ["TypeScript", "React Native", "Expo"]
     }
 ];
