@@ -1,5 +1,10 @@
 /* Portfólio Page Styles */
 
+/* Container da página */
+.page-container {
+    padding-top: 26px;
+}
+
 /* Seções */
 .linguagens-section {
     margin-bottom: 3rem;

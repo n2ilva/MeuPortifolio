@@ -1,5 +1,10 @@
 /* Contato Page Styles - Terminal Theme */
 
+/* Container da página */
+.page-container {
+    padding-top: 26px;
+}
+
 /* Terminal Container */
 .terminal-container {
     background: #0d0d0d;

@@ -52,60 +52,72 @@ function MainContent() {
     };
 
     return (
-        <div className="container-fluid p-0 main-container">
-            <div className="row g-0 flex-nowrap">
-                {/* Sidebar / Menu Lateral */}
-                <div className="col-auto col-md-3 col-xl-2 px-0 sidebar">
-                    <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-4 text-white sidebar-content">
-                        {/* Perfil / Logo */}
-                        <ProfileCard onClick={(e) => handleNavigation("home", e)} />
+        <div className="main-wrapper">
+            {/* Sidebar Desktop */}
+            <div className="sidebar sidebar-desktop">
+                <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-4 text-white sidebar-content">
+                    {/* Perfil / Logo */}
+                    <ProfileCard onClick={(e) => handleNavigation("home", e)} />
 
-                        {/* Menu de Navegação */}
-                        <ul className="nav nav-pills flex-column mb-sm-auto mb-0 w-100" id="menu">
-                            {menuItems.map((item) => (
-                                <NavMenuItem
-                                    key={item.id}
-                                    item={item}
-                                    isActive={currentPage === item.page}
-                                    onClick={handleNavigation}
-                                />
-                            ))}
-                            
-                            {/* Botão Download para Mobile (aparece na navbar) */}
-                            <li className="nav-item mb-2 nav-menu-item download-nav-item">
-                                <a
-                                    href="https://drive.google.com/uc?export=download&id=1uth6Zmo4UthgDdlgoSnOHpcyLjBGPXQ9"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="nav-link d-flex align-items-center rounded-3 px-3 py-2 nav-menu-link download-nav-link"
-                                >
-                                    <i className="bi bi-file-earmark-arrow-down fs-5"></i>
-                                    <span className="ms-2 d-none d-sm-inline">Currículo</span>
-                                </a>
-                            </li>
-                        </ul>
+                    {/* Menu de Navegação */}
+                    <ul className="nav nav-pills flex-column mb-sm-auto mb-0 w-100" id="menu">
+                        {menuItems.map((item) => (
+                            <NavMenuItem
+                                key={item.id}
+                                item={item}
+                                isActive={currentPage === item.page}
+                                onClick={handleNavigation}
+                            />
+                        ))}
+                    </ul>
 
-                        {/* Botão Download Currículo (Desktop) */}
-                        <div className="mt-auto w-100 pt-3 pb-4 download-desktop">
-                            <a
-                                href="https://drive.google.com/uc?export=download&id=1uth6Zmo4UthgDdlgoSnOHpcyLjBGPXQ9"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 download-btn"
-                            >
-                                <i className="bi bi-download"></i>
-                                <span className="d-none d-sm-inline">Baixar Currículo</span>
-                            </a>
-                        </div>
+                    {/* Botão Download Currículo (Desktop) */}
+                    <div className="mt-auto w-100 pt-3 pb-4 download-desktop">
+                        <a
+                            href="https://drive.google.com/uc?export=download&id=1uth6Zmo4UthgDdlgoSnOHpcyLjBGPXQ9"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 download-btn"
+                        >
+                            <i className="bi bi-download"></i>
+                            <span className="d-none d-sm-inline">Baixar Currículo</span>
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                {/* Área de Conteúdo Principal */}
-                <div className="col py-4 px-4 content-area">
+            {/* Área de Conteúdo Principal */}
+            <div className="content-area">
+                <div className="content-scroll">
                     <div className="rounded-4 p-4 content-card">
                         {renderContent()}
                     </div>
                 </div>
+            </div>
+
+            {/* Menu Mobile (Rodapé) */}
+            <div className="mobile-nav">
+                <ul className="nav" id="mobile-menu">
+                    {menuItems.map((item) => (
+                        <NavMenuItem
+                            key={item.id}
+                            item={item}
+                            isActive={currentPage === item.page}
+                            onClick={handleNavigation}
+                        />
+                    ))}
+                    {/* Botão Download para Mobile */}
+                    <li className="nav-item nav-menu-item">
+                        <a
+                            href="https://drive.google.com/uc?export=download&id=1uth6Zmo4UthgDdlgoSnOHpcyLjBGPXQ9"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="nav-link d-flex align-items-center rounded-3 px-3 py-2 nav-menu-link download-nav-link"
+                        >
+                            <i className="bi bi-file-earmark-arrow-down fs-5"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     );

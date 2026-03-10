@@ -1,3 +1,8 @@
+/* Container da página de infraestrutura */
+.page-container {
+    padding-top: 26px;
+}
+
 .intro-text {
     color: var(--text-secondary);
     font-size: 1.1rem;

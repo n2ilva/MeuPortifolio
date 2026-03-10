@@ -24,9 +24,17 @@
 
   /* Transições */
   --transition-default: all 0.3s ease;
+  
+  /* Altura do menu mobile */
+  --mobile-nav-height: 70px;
 }
 
-.main-container {
+/* ========================================
+   LAYOUT PRINCIPAL
+   ======================================== */
+
+.main-wrapper {
+  display: flex;
   min-height: 100vh;
   background: linear-gradient(
     135deg,
@@ -35,12 +43,16 @@
   );
 }
 
-.sidebar {
+/* ========================================
+   SIDEBAR DESKTOP
+   ======================================== */
+
+.sidebar-desktop {
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
-  width: 220px; /* Largura fixa menor para o menu */
+  width: 220px;
   overflow-y: auto;
   background: linear-gradient(
     180deg,
@@ -58,22 +70,26 @@
 }
 
 /* Scrollbar personalizada para sidebar */
-.sidebar::-webkit-scrollbar {
+.sidebar-desktop::-webkit-scrollbar {
   width: 8px;
 }
 
-.sidebar::-webkit-scrollbar-track {
+.sidebar-desktop::-webkit-scrollbar-track {
   background: var(--color-bg-darker);
 }
 
-.sidebar::-webkit-scrollbar-thumb {
+.sidebar-desktop::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 }
 
-.sidebar::-webkit-scrollbar-thumb:hover {
+.sidebar-desktop::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
+
+/* ========================================
+   PERFIL
+   ======================================== */
 
 .profile-section {
   transition: var(--transition-default);
@@ -97,6 +113,10 @@
   color: var(--color-text-muted);
 }
 
+/* ========================================
+   MENU DE NAVEGAÇÃO
+   ======================================== */
+
 .nav-menu-item {
   transition: var(--transition-default);
 }
@@ -116,17 +136,22 @@
   color: var(--color-text-white);
 }
 
+/* ========================================
+   ÁREA DE CONTEÚDO
+   ======================================== */
+
 .content-area {
-  position: relative;
-  z-index: 200;
-  margin-left: 220px; /* Compensa o espaço da sidebar fixa */
-  background: linear-gradient(
-    135deg,
-    var(--color-bg-dark) 0%,
-    var(--color-bg-accent) 100%
-  );
+  flex: 1;
+  margin-left: 220px;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  overflow: visible;
+}
+
+.content-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
 }
 
 .content-card {
@@ -151,7 +176,10 @@
   color: var(--color-text-secondary);
 }
 
-/* Botão de Download */
+/* ========================================
+   BOTÃO DE DOWNLOAD
+   ======================================== */
+
 .download-btn {
   background: var(--color-primary);
   border: none;
@@ -165,131 +193,129 @@
   transform: translateY(-2px);
 }
 
+.download-nav-link {
+  color: var(--color-primary) !important;
+}
+
+.download-nav-link:hover {
+  background: rgba(13, 110, 253, 0.2) !important;
+}
+
+/* ========================================
+   MENU MOBILE (RODAPÉ)
+   ======================================== */
+
+.mobile-nav {
+  display: none;
+}
+
 /* ========================================
    MOBILE RESPONSIVE STYLES
    ======================================== */
 
-/* Tablet e abaixo */
 @media (max-width: 768px) {
-  .main-container {
-    flex-direction: column;
+  .main-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100vh !important;
+    height: 100dvh !important; /* Dynamic viewport height para mobile */
+    overflow: hidden !important;
   }
 
-  .main-container > .row {
-    flex-direction: column-reverse !important;
-    flex-wrap: wrap !important;
-  }
-
-  /* Sidebar vira barra inferior fixa */
-  .sidebar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100% !important;
-    max-width: 100% !important;
-    z-index: 1000;
-    border-right: none;
-    border-top: 1px solid var(--color-border-light);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
-    background: var(--color-bg-darker);
-  }
-
-  .sidebar-content {
-    min-height: auto !important;
-    flex-direction: row !important;
-    padding: 0 !important;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Ocultar perfil no mobile */
-  .profile-section {
+  /* Ocultar sidebar desktop no mobile */
+  .sidebar-desktop {
     display: none !important;
   }
 
-  /* Menu horizontal */
-  .sidebar #menu {
-    flex-direction: row !important;
-    width: auto !important;
-    gap: 0;
-    padding: 8px 0;
-  }
-
-  .nav-menu-item {
-    margin-bottom: 0 !important;
-  }
-
-  .nav-menu-link {
-    flex-direction: column;
-    padding: 10px 20px !important;
-    gap: 4px;
-    border-radius: 12px !important;
-  }
-
-  .nav-menu-link i {
-    font-size: 1.3rem !important;
-  }
-
-  /* Labels dos menus ocultos no mobile */
-  .nav-menu-link span {
-    display: none !important;
-  }
-
-  /* Botão de download desktop oculto no mobile */
-  .download-desktop {
-    display: none !important;
-  }
-
-  /* Estilo do botão download na navbar mobile */
-  .download-nav-link {
-    color: var(--color-primary) !important;
-  }
-
-  .download-nav-link:hover {
-    background: rgba(13, 110, 253, 0.2) !important;
-  }
-
-  /* Área de conteúdo com padding inferior para não ficar atrás do menu */
+  /* Área de conteúdo ocupa o espaço restante */
   .content-area {
-    margin-left: 0;
-    padding-bottom: 90px !important;
-    min-height: calc(100vh - 70px);
+    flex: 1 1 auto !important;
+    margin-left: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important; /* Importante para flex funcionar com overflow */
+  }
+
+  .content-scroll {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    padding: 12px;
+    -webkit-overflow-scrolling: touch;
+    min-height: 0 !important; /* Importante para scroll funcionar */
   }
 
   .content-card {
     min-height: auto;
+    padding: 12px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    background: transparent !important;
   }
-}
 
-/* Ocultar botão download da navbar no desktop */
-.download-nav-item {
-  display: none;
-}
+  .content-scroll {
+    padding: 0 !important;
+  }
 
-@media (max-width: 768px) {
-  .download-nav-item {
-    display: block;
+  /* Menu Mobile fixo no rodapé */
+  .mobile-nav {
+    display: flex !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    background: var(--color-bg-darker) !important;
+    border-top: 1px solid var(--color-border-light) !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3) !important;
+    z-index: 1000 !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .mobile-nav .nav {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 8px 0 !important;
+    gap: 0;
+  }
+
+  .mobile-nav .nav-menu-item {
+    margin-bottom: 0 !important;
+  }
+
+  .mobile-nav .nav-menu-link {
+    flex-direction: column;
+    padding: 10px 16px !important;
+    gap: 4px;
+    border-radius: 12px !important;
+  }
+
+  .mobile-nav .nav-menu-link i {
+    font-size: 1.3rem !important;
+  }
+
+  /* Labels dos menus ocultos no mobile */
+  .mobile-nav .nav-menu-link span {
+    display: none !important;
   }
 }
 
 /* Mobile pequeno */
 @media (max-width: 480px) {
-  .content-area {
-    padding: 12px !important;
-    padding-bottom: 90px !important;
+  .content-scroll {
+    padding: 8px;
   }
 
   .content-card {
-    padding: 16px !important;
-    border-radius: 16px !important;
+    padding: 12px !important;
+    border-radius: 12px !important;
   }
 
-  .nav-menu-link {
-    padding: 10px 16px !important;
+  .mobile-nav .nav-menu-link {
+    padding: 8px 12px !important;
   }
 
-  .nav-menu-link i {
+  .mobile-nav .nav-menu-link i {
     font-size: 1.2rem !important;
   }
 }
