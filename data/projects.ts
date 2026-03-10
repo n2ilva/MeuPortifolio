@@ -47,7 +47,7 @@ export const projetos: Projeto[] = [
         nome: "QuizMaster",
         descricao: "Aplicativo desenvolvido para potencializar o aprendizado por meio de questões em formato de cards. Cada item apresenta a resposta correta com explicação objetiva e exemplo prático de aplicação. O projeto inclui acompanhamento de progresso e nivelamento dinâmico com base na taxa de acertos do usuário.",
         imagem: "/QuizMaster.png",
-        link: "https://n2ilva.github.io/CardMaster/",
+        link: "https://n2ilva.github.io/QuizMaster/",
         tecnologias: ["TypeScript", "React Native", "Expo"]
     }
 ];
