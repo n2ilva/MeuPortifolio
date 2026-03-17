@@ -53,8 +53,10 @@ export default function HomeHeader() {
                 </div>
 
                 <p className="hero-description">
-                    Experiência sólida em <strong>infraestrutura de TI, com 6 anos de atuação</strong>, 
-                    aliada a estudos contínuos em desenvolvimento web e mobile para ampliar soluções ponta a ponta.
+                    Analista de infraestrutura de TI com <strong>7 anos de experiência em redes e administração de ambientes corporativos</strong>,
+                    com atuação em configuração e testes de equipamentos Cisco L2/L3, Fortinet, MikroTik, Ubiquiti e telefonia IP,
+                    além de administração de servidores Windows e Linux, experiência prática com Microsoft Azure e Microsoft 365,
+                    ampla vivência em virtualização com VMware e Hyper-V e atuação orientada por boas práticas de ITIL.
                 </p>
             </div>
 
@@ -71,7 +73,7 @@ export default function HomeHeader() {
   nome: "Natanael Santos Da Silva Ramos",
   idade: "30 anos",
   cidade: "Goiânia-GO",
-  infraestrutura: "6 anos",
+    infraestrutura: "7 anos",
   desenvolvimento: "1 ano",
   status: "Disponível"
 };`}

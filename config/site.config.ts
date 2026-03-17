@@ -9,7 +9,7 @@ export const profile = {
 
 // Configurações de Experiência
 export const experience = {
-    infraYears: 6,
+    infraYears: 7,
     devYears: 1,
     get totalYears() {
         return this.infraYears + this.devYears;
@@ -30,8 +30,8 @@ export const experiencias = [
         tempo: `${experience.infraYears} anos`,
         icone: "bi-hdd-network-fill",
         cor: "#6366f1",
-        descricao: "6 anos de experiência em Infraestrutura de Redes e TI, garantindo estabilidade, segurança e alta disponibilidade em ambientes corporativos. Expertise em Windows Server, Unix/Linux, Active Directory, VPN e virtualização (VMware e Hyper-V). Atuação em ambientes Cloud (AWS, Azure e GCP), com práticas baseadas em ITIL, foco em SLA, continuidade de serviços e melhoria contínua.",
-        tags: ["Cisco", "Fortigate", "Dell", "VMware", "Hyper-V", "Azure", "AWS", "ITIL"],
+        descricao: "Tecnologias com experiência real em ambientes corporativos.",
+        tags: ["Cisco L2/L3", "Controller Cisco", "Voz IP", "Troubleshooting Avançado", "Linux", "Windows Server", "AD", "GPO", "Azure AD", "VMware", "Hyper-V", "Banco de Dados", "BMC Remedy", "ServiceNow", "Zabbix", "SolarWinds", "Fortinet", "pfSense"],
         clicavel: true,
         pagina: "infraestrutura" as const
     },
@@ -40,8 +40,8 @@ export const experiencias = [
         tempo: `${experience.devYears} ano`,
         icone: "bi-code-slash",
         cor: "#22c55e",
-        descricao: "TypeScript como principal linguagem no desenvolvimento de aplicações Web e Mobile com React, React Native e Next.js • Experiência prática em autenticação (Google OAuth/Firebase Auth), integração de APIs (Google Drive/Fotos, MercadoPago e Stripe), sincronização em tempo real, criação de interfaces interativas (drag-and-drop) e construção de soluções escaláveis orientadas a produto",
-        tags: ["TypeScript", "React", "React Native", "Next.js", "Firebase", "Stripe"],
+        descricao: "Tecnologias estudadas no ultimo 1 ano.",
+        tags: ["Node.js", "TypeScript", "JavaScript", "Kotlin", "React", "React Native", "Bootstrap", "Tailwind", "Next.js", "Express", "Prisma", "Firebase", "Google Auth", "Spring Initializr", "AWS EC2", "Docker", "MongoDB", "PostgreSQL", "Git", "GitHub"],
         clicavel: true,
         pagina: "projetos" as const
     }

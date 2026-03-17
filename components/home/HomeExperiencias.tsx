@@ -36,12 +36,14 @@ export default function HomeExperiencias() {
                                     {isClickable && <i className="bi bi-arrow-right-circle ms-2"></i>}
                                 </h3>
                                 <span className="exp-tempo">{exp.tempo}</span>
-                                <p className="exp-descricao">{exp.descricao}</p>
-                                <div className="exp-tags">
-                                    {exp.tags.map((tag) => (
-                                        <span key={tag} className="exp-tag">{tag}</span>
-                                    ))}
-                                </div>
+                                {exp.descricao && <p className="exp-descricao">{exp.descricao}</p>}
+                                {exp.tags.length > 0 && (
+                                    <div className="exp-tags">
+                                        {exp.tags.map((tag) => (
+                                            <span key={tag} className="exp-tag">{tag}</span>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
                     );

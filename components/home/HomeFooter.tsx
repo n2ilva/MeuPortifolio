@@ -6,7 +6,7 @@ export default function HomeFooter() {
     return (
         <section className="stats-section">
             <div className="stat-card">
-                <span className="stat-number">{experience.totalYears}+</span>
+                <span className="stat-number">{experience.infraYears}+</span>
                 <span className="stat-label">Anos em TI</span>
             </div>
             <div className="stat-card">

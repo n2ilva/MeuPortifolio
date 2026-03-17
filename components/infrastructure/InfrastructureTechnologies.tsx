@@ -21,6 +21,9 @@ const infraCategorias: InfraCategoria[] = [
             { nome: "Dell" },
             { nome: "SD-WAN" },
             { nome: "VLAN" },
+            { nome: "VRF" },
+            { nome: "IPv4" },
+            { nome: "IPv6" },
             { nome: "DHCP" },
             { nome: "DNS" },
             { nome: "VPN IPsec" },
@@ -56,15 +59,12 @@ const infraCategorias: InfraCategoria[] = [
         ]
     },
     {
-        titulo: "Cloud & Banco de Dados",
+        titulo: "Cloud",
         icone: "bi-cloud-fill",
         cor: "#0ea5e9",
         itens: [
             { nome: "AWS" },
             { nome: "Azure" },
-            { nome: "GCP" },
-            { nome: "MySQL" },
-            { nome: "Oracle" }
         ]
     },
     {
@@ -74,8 +74,8 @@ const infraCategorias: InfraCategoria[] = [
         itens: [
             { nome: "BMC Remedy" },
             { nome: "ServiceNow" },
-            { nome: "Jira" },
-            { nome: "Scripts" },
+            { nome: "Shell" },
+            { nome: "Besh" },
             { nome: "ITIL" },
             { nome: "COBIT" }
         ]
